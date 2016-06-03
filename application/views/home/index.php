@@ -456,8 +456,8 @@
                   </div>
                   <div class="media-social-icon">
                     <ul class="list-inline">
-                      <li><a href="https://www.facebook.com/AdaniOnline/" class="social-icon-top"><img src="<?php echo base_url(); ?>assets/img/fb-w.png"></a></li>
-                      <li><a href="https://twitter.com/AdaniOnline" class="social-icon-top"><img src="<?php echo base_url(); ?>assets/img/tw-w.png"></a></li>
+                      <li><a href="<?php echo $media['link'];?>" data-image="<?php echo base_url(); ?>uploads/<?php echo $playerData['profile_photo']; ?>" data-title="<?php echo $media['name'];?>" data-desc="Proud to support <?php echo $media['name'];?> in the Rio Olympics 2016. #GarvHai" class="social-icon-top btnShare"><img src="<?php echo base_url(); ?>assets/img/fb-w.png"></a></li>
+                      <li><a data-title="<?php echo $media['name'];?>"  data-href="<?php echo $media['link'];?>" data-desc="<?php echo $media['media_value'];?>" href="javascript: void(0)" class="social-icon-top tw-user-media"><img src="<?php echo base_url(); ?>assets/img/tw-w.png"></a></li>
                     </ul>
                   </div>
                 </div>
