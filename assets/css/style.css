@@ -168,7 +168,7 @@ html,body{height: 100%;font-family: 'rubrikregular';color: #000;font-size: 12px;
 .hero-achive-wrpr>div{display: table-cell;vertical-align: middle;}
 .hero-detail-top-in {position: relative;padding-right: 115px;}
 .hero-detail-social-icon {position: absolute;right: 45px;top: 0;}
-.close-prof{text-align:right;float: right; position: absolute; right:0px; top:0px;cursor:pointer;}
+.close-prof{text-align:right;float: right; position: absolute; right:5px; top:5px; z-index:10; cursor:pointer;}
 .hero-achive-con,.hero-achive-time {background-color: #c47600;padding: 5px 10px;}
 .hero-achive-time{background-color: #e28800;}
 .hero-achive-time+.hero-achive-time{border-left: 1px solid #f1c480;}
@@ -223,6 +223,7 @@ html,body{height: 100%;font-family: 'rubrikregular';color: #000;font-size: 12px;
 .cust-inp-wrpr li+li{margin-top: 12px;}
 .filter-btn{background-color: transparent;border: 1px solid #fff;color: #fff;margin-top: 5px;}
 .filter-title{font-size: 18px;font-family: 'rubrikmedium';margin: 10px 0;}
+.subhead-title{font-size: 18px;font-family: 'rubrikmedium';margin: 10px 0; text-align: center; color: #fff;}
 .menu-btn,.mob-menu-list{display: none;}
 div.facebook .pp_previous{background: url(../img/prettyPhoto/facebook/btnPrevious.png) center left no-repeat;}
 div.facebook .pp_next{background: url(../img/prettyPhoto/facebook/btnNext.png) center right no-repeat;}
@@ -284,6 +285,7 @@ div.facebook  a.pp_close {right: 10px;top: -9px;width: 25px;height: 25px;backgro
 .contact-form{max-width: 670px;margin: 0 auto;padding: 50px 0 30px;}
 .contact-wrpr{padding-top: 20px;}
 .contact-title {color: #f90;font-size: 24px;font-family: 'rubrikmedium';}
+.media-title {color: #fff;font-size: 24px;font-family: 'rubrikmedium';}
 .btn-submit {background-color: #f90;color: #0e1536;border-radius: 0;font-size: 14px;font-family: 'rubrikregular';}
 .email-txt,.abt-social-txt{font-size: 16px;color: #999794;font-family: 'rubrikregular';}
 .email-txt a{color: #f90;}

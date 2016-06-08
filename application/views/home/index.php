@@ -71,7 +71,8 @@
           <div class="col-xs-12">
             <div class="row">
               <div class="know-txt">
-                Know more about the men and women striving to make India proud.
+                It’s only when you know our athletes well is when you’ll truly feel proud of them.<br/>
+                Get to know our heroes, right here.
               </div>
             </div>
           </div>
@@ -140,16 +141,16 @@
                         <ul class="list-inline">
                           <li class="fb-list">
                           <?php if($playerData['olympic_qulified'] == '1') {
-                              $fbDesc = 'Proud to support '.$playerData["name"].' in the Rio Olympics 2016. #GarvHai @adani';
+                              $fbDesc = 'Proud to support '.$playerData["name"].' in the Rio Olympics 2016. #GarvHai #Adani';
                               $twDesc = 'Proud to support '.$playerData["name"].' in the Rio Olympics 2016.';
                             }else{
-                                $fbDesc = 'Proud to support '.$playerData["name"].'. #GarvHai @adani';
+                                $fbDesc = 'Proud to support '.$playerData["name"].'. #GarvHai #Adani';
                                 $twDesc = 'Proud to support '.$playerData["name"].'.';
                               } 
                              
                               ?>
                            <a href="/" data-image="<?php echo base_url(); ?>uploads/<?php echo $playerData['profile_photo']; ?>" data-title="<?php echo $playerData['name'];?>" data-desc="<?php echo $fbDesc;?>" class="btnShare"><img src="<?php echo base_url(); ?>assets/img/fb-w.png"></a></li>
-                          <li><a onClick="window.open('https://twitter.com/share?url='+escape(window.location.href)+'&text=\'<?php echo $twDesc; ?>\'via @adani&hashtags=GarvHai', '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');" href="javascript: void(0)" class="social-icon-top"><img src="<?php echo base_url(); ?>assets/img/tw-w.png"></a></li>
+                          <li><a onClick="window.open('https://twitter.com/share?url='+escape(window.location.href)+'&text=\'<?php echo $twDesc; ?>\'via @AdaniOnline&hashtags=GarvHai', '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');" href="javascript: void(0)" class="social-icon-top"><img src="<?php echo base_url(); ?>assets/img/tw-w.png"></a></li>
                         </ul>
                       </div>
                     </div>
@@ -159,6 +160,9 @@
                }
               } ?>
               <div class="col-xs-40 col-xs-4 hero-detail-info hidden">
+                <div class="close-prof">
+                  <img src="<?php echo base_url(); ?>assets/img/close-icon-white.png">
+                </div>
                 <div class="hero-detail-inner hero-detail-inner-profile hidden">
                   <div class="hero-detail-top">
                     <div class="hero-detail-top-in">
@@ -177,9 +181,6 @@
                           22.1
                         </div>
                       </div> -->
-                      <div class="close-prof">
-                        <img src="<?php echo base_url(); ?>assets/img/close-icon-white.png">
-                      </div>
                       <div class="hero-detail-social-icon text-center">
                         <div id="hero-support-name">Support Inderjeet</div>
                         <ul class="list-inline">
@@ -298,7 +299,7 @@
                   <div class="col-xs-12">
                     <div class="hero-filter hero-filter-desk clearfix">
                       <div class="col-xs-12">
-                        <div class="filter-title">Catch the athletes in action</div>                     
+                        <div class="filter-title">Catch our mighty Athletes in action and share it with the world.</div>                     
                       </div>
                         <?php 
                         if(isset($records)){
@@ -390,12 +391,13 @@
     </section>
     <section id="about" class="about-wrpr">
       <div class="about-inner">
-        <h2 class="about-title text-uppercase text-center">About Garv Hai</h2>
+        <h2 class="about-title text-uppercase text-center">#GarvHai: The Adani Initiative</h2>
         <p class="about-discrb text-center">"Sport has the power to build a better and stronger nation. Which is why we have started the <span>#GarvHai</span> initiative - a humble effort by us to support budding Olympians and bring glory to the nation. We chose athletes from all parts of India to assist them to qualify for the Games much before the Olympics begin. These men and women have fought the odds and made great sacrifices, all for one vision - to bring glory to India. We need you to stand up and say 'Garv Hai'!<br/> Join us, and together, let's make history."</p>
       </div>
     </section>
     <section id="contact" class="contact-wrpr">
       <h2 class="contact-title text-uppercase text-center">Share your experience</h2>
+      <div class="subhead-title">We at Adani are eager to know your #GarvHai moments. Do share it with us.</div>
       <form class="contact-form clearfix">
         <div class="col-xs-12">
           <div class="row">
@@ -461,8 +463,12 @@
     <section id="media" class="players-schedule-wrpr">
       <div class="ply-schd-inner clearfix">
         <div class="row">
+          <h2 class="media-title text-uppercase text-center">Media</h2>
+          <div class="subhead-title">
+            Our Olympic warriors are making the right waves.<br/>
+            Catch up with all the latest news about our players.
+          </div>
           <div class="col-sm-5 col-xs-12">
-            <h2 class="athletes-act">Catch the athletes in action</h2>
             <ul class="cust-inp-wrpr">
             <li>
             <input type="radio" id="schedule_all" name="adaniplayers" value="all" checked="checked">
