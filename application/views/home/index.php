@@ -4,7 +4,7 @@
     <section class="video-wrpr">
     <?php //if( !$detect->isMobile()){ ?>
       <div class="embed-responsive embed-responsive-16by9 video-resize">
-        <iframe id="youtube_player" class="embed-responsive-item" src="https://www.youtube.com/embed/0Oxq8aLElEk?autoplay=1&loop=1&playlist=GRonxog5mbw&modestbranding=1&autohide=1&showinfo=0&controls=0&enablejsapi=1&version=3&playerapiid=ytplayer" frameborder="0" allowfullscreen></iframe>
+        <iframe id="youtube_player" class="embed-responsive-item" src="https://www.youtube.com/embed/0Oxq8aLElEk?autoplay=1&loop=1&modestbranding=1&autohide=1&showinfo=0&controls=0&enablejsapi=1&version=3&playerapiid=ytplayer" frameborder="0" allowfullscreen></iframe>
        </div>
       <?php /*}else { ?>
         <img src="<?php echo base_url(); ?>assets/img/inderjeet-mob-banner.jpg" class="img-responsive mob-inderjeet-img">
