@@ -234,7 +234,7 @@
           }else{
             twDesc = 'Proud to support '+username+'.'
           }
-          window.open('https://twitter.com/share?url='+escape(window.location.href)+'&text='+twDesc+'via @adani&hashtags=GarvHai', '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');          
+          window.open('https://twitter.com/share?url='+escape(window.location.href)+'&text='+twDesc+'via @AdaniOnline&hashtags=GarvHai', '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');          
         });
 
         $('body').on('click','.tw-user-media', function(e){
@@ -242,7 +242,7 @@
           var link = $(this).data('href');
           var description = $(this).data('desc');
           var username = $(this).data('title');
-          window.open('https://twitter.com/share?url='+escape(link)+'&text='+username+': '+description+'via @adani&hashtags=GarvHai', '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');          
+          window.open('https://twitter.com/share?url='+escape(link)+'&text='+username+': '+description+'via @AdaniOnline&hashtags=GarvHai', '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');          
         });
 
         $('#mobileMediaFilter').change(function(e){
@@ -295,9 +295,9 @@
                 var mobileFBSocialHtml = mobileTWSocialHtml = '';
                 if(playerMode == 'profile'){
                   if(data.modal_data[0].olympic_qulified == 1){
-                    fbDesc += 'Proud to support '+data.modal_data[0].name+' in the Rio Olympics 2016. #GarvHai @adani';
+                    fbDesc += 'Proud to support '+data.modal_data[0].name+' in the Rio Olympics 2016. #GarvHai by #Adani';
                   }else{
-                    fbDesc += 'Proud to support '+data.modal_data[0].name+'. #GarvHai @adani';
+                    fbDesc += 'Proud to support '+data.modal_data[0].name+'. #GarvHai by #Adani';
                   }
                   socialHtml += '<li><a href="'+baseUrl+'" class="social-icon-top fb-user-profile" data-desc="'+fbDesc+'" data-title="'+data.modal_data[0].name+'" data-image="'+baseUrl+'uploads/'+data.modal_data[0].profile_photo+'"><img src="'+baseUrl+'assets/img/fb-w.png"></a></li><li><a href="javascript:void(0)" class="social-icon-top tw-user-profile" data-qualified="'+data.modal_data[0].olympic_qulified+'" data-username="'+data.modal_data[0].name+'"><img src="'+baseUrl+'assets/img/tw-w.png"></a></li>';
                   mobileFBSocialHtml += '<a href="'+baseUrl+'" class="social-icon-top fb-user-profile" data-desc="'+fbDesc+'" data-title="'+data.modal_data[0].name+'" data-image="'+baseUrl+'uploads/'+data.modal_data[0].profile_photo+'"><img src="'+baseUrl+'assets/img/fb-w.png"></a>';

@@ -108,6 +108,7 @@ html,body{height: 100%;font-family: 'rubrikregular';color: #000;font-size: 12px;
 .bottom-header-wrpr .nav li+li{margin-left: 56px;}
 .bottom-header-wrpr .nav li.adani-logo{margin-left: 4px;}
 #topNav .nav > li.adani-logo a {bottom:5px; !important;}
+ .fix-header #topNav .nav > li.adani-logo a {bottom:0px !important;}
 .fix-header .bottom-header-wrpr .nav li.adani-logo{margin-left: 0px;}
 .bottom-header-wrpr .nav{background-color: #fff;padding: 10px 9px;position: relative;}
 .main-nav{float: left;position: relative;}

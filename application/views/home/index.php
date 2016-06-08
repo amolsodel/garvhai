@@ -141,10 +141,10 @@
                         <ul class="list-inline">
                           <li class="fb-list">
                           <?php if($playerData['olympic_qulified'] == '1') {
-                              $fbDesc = 'Proud to support '.$playerData["name"].' in the Rio Olympics 2016. #GarvHai #Adani';
+                              $fbDesc = 'Proud to support '.$playerData["name"].' in the Rio Olympics 2016. #GarvHai by #Adani';
                               $twDesc = 'Proud to support '.$playerData["name"].' in the Rio Olympics 2016.';
                             }else{
-                                $fbDesc = 'Proud to support '.$playerData["name"].'. #GarvHai #Adani';
+                                $fbDesc = 'Proud to support '.$playerData["name"].'. #GarvHai by #Adani';
                                 $twDesc = 'Proud to support '.$playerData["name"].'.';
                               } 
                              
@@ -265,7 +265,7 @@
                 <div class="row">
                   <div class="hero-filter clearfix">
                     <div class="col-xs-12">
-                      <div class="filter-title">Catch the athletes in action</div>
+                      <div class="filter-title">Catch our mighty Athletes in action and share it with the world.</div>
                       <div class="custom-label-vid text-uppercase">
                         videos &amp; images
                       </div>
@@ -361,9 +361,9 @@
                       <?php 
                       if($videoData['olympic_qulified'] == '1') {
 
-                          $fbDesc .= 'Proud to support '.$videoData["name"].' in the Rio Olympics 2016. #GarvHai @adani';
+                          $fbDesc .= 'Proud to support '.$videoData["name"].' in the Rio Olympics 2016. #GarvHai by #Adani';
                         }else{
-                          $fbDesc .= 'Proud to support '.$videoData["name"].'. #GarvHai @adani';
+                          $fbDesc .= 'Proud to support '.$videoData["name"].'. #GarvHai by #Adani';
                         } 
 
                       if($videoData['type'] == 'image') { 
