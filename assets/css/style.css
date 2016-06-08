@@ -83,7 +83,7 @@ html,body{height: 100%;font-family: 'rubrikregular';color: #000;font-size: 12px;
 #topNav .nav>li>a{bottom: auto;right: auto}
 .top-header-wrpr{padding: 20px 0;}
 .bottom-header-wrpr,.top-header-wrpr{max-width: 930px;margin: 0 auto;width: 100%;}
-.bottom-header-wrpr{max-width: 620px;}
+/*.bottom-header-wrpr{max-width: 620px;}*/
 .fix-header .bottom-header-wrpr .main-nav:before{display: none;}
 .fix-header .bottom-header-wrpr{position: fixed;top: 0;left: 0;width: 100%;max-width: 100%;}
 .fix-header .bottom-header-wrpr .main-nav{width: 100%;background-color: #fff;}
