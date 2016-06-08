@@ -141,16 +141,16 @@
                         <ul class="list-inline">
                           <li class="fb-list">
                           <?php if($playerData['olympic_qulified'] == '1') {
-                              $fbDesc = 'Proud to support '.$playerData["name"].' in the Rio Olympics 2016. #GarvHai @adani';
+                              $fbDesc = 'Proud to support '.$playerData["name"].' in the Rio Olympics 2016. #GarvHai #Adani';
                               $twDesc = 'Proud to support '.$playerData["name"].' in the Rio Olympics 2016.';
                             }else{
-                                $fbDesc = 'Proud to support '.$playerData["name"].'. #GarvHai @adani';
+                                $fbDesc = 'Proud to support '.$playerData["name"].'. #GarvHai #Adani';
                                 $twDesc = 'Proud to support '.$playerData["name"].'.';
                               } 
                              
                               ?>
                            <a href="/" data-image="<?php echo base_url(); ?>uploads/<?php echo $playerData['profile_photo']; ?>" data-title="<?php echo $playerData['name'];?>" data-desc="<?php echo $fbDesc;?>" class="btnShare"><img src="<?php echo base_url(); ?>assets/img/fb-w.png"></a></li>
-                          <li><a onClick="window.open('https://twitter.com/share?url='+escape(window.location.href)+'&text=\'<?php echo $twDesc; ?>\'via @adani&hashtags=GarvHai', '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');" href="javascript: void(0)" class="social-icon-top"><img src="<?php echo base_url(); ?>assets/img/tw-w.png"></a></li>
+                          <li><a onClick="window.open('https://twitter.com/share?url='+escape(window.location.href)+'&text=\'<?php echo $twDesc; ?>\'via @AdaniOnline&hashtags=GarvHai', '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');" href="javascript: void(0)" class="social-icon-top"><img src="<?php echo base_url(); ?>assets/img/tw-w.png"></a></li>
                         </ul>
                       </div>
                     </div>
@@ -160,6 +160,9 @@
                }
               } ?>
               <div class="col-xs-40 col-xs-4 hero-detail-info hidden">
+                <div class="close-prof">
+                  <img src="<?php echo base_url(); ?>assets/img/close-icon-white.png">
+                </div>
                 <div class="hero-detail-inner hero-detail-inner-profile hidden">
                   <div class="hero-detail-top">
                     <div class="hero-detail-top-in">
@@ -178,9 +181,6 @@
                           22.1
                         </div>
                       </div> -->
-                      <div class="close-prof">
-                        <img src="<?php echo base_url(); ?>assets/img/close-icon-white.png">
-                      </div>
                       <div class="hero-detail-social-icon text-center">
                         <div id="hero-support-name">Support Inderjeet</div>
                         <ul class="list-inline">
