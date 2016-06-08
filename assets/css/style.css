@@ -83,7 +83,7 @@ html,body{height: 100%;font-family: 'rubrikregular';color: #000;font-size: 12px;
 #topNav .nav>li>a{bottom: auto;right: auto}
 .top-header-wrpr{padding: 20px 0;}
 .bottom-header-wrpr,.top-header-wrpr{max-width: 930px;margin: 0 auto;width: 100%;}
-.bottom-header-wrpr{max-width: 620px;}
+/*.bottom-header-wrpr{max-width: 620px;}*/
 .fix-header .bottom-header-wrpr .main-nav:before{display: none;}
 .fix-header .bottom-header-wrpr{position: fixed;top: 0;left: 0;width: 100%;max-width: 100%;}
 .fix-header .bottom-header-wrpr .main-nav{width: 100%;background-color: #fff;}
@@ -108,6 +108,7 @@ html,body{height: 100%;font-family: 'rubrikregular';color: #000;font-size: 12px;
 .bottom-header-wrpr .nav li+li{margin-left: 56px;}
 .bottom-header-wrpr .nav li.adani-logo{margin-left: 4px;}
 #topNav .nav > li.adani-logo a {bottom:5px; !important;}
+ .fix-header #topNav .nav > li.adani-logo a {bottom:0px !important;}
 .fix-header .bottom-header-wrpr .nav li.adani-logo{margin-left: 0px;}
 .bottom-header-wrpr .nav{background-color: #fff;padding: 10px 9px;position: relative;}
 .main-nav{float: left;position: relative;}
@@ -223,7 +224,7 @@ html,body{height: 100%;font-family: 'rubrikregular';color: #000;font-size: 12px;
 .cust-inp-wrpr li+li{margin-top: 12px;}
 .filter-btn{background-color: transparent;border: 1px solid #fff;color: #fff;margin-top: 5px;}
 .filter-title{font-size: 18px;font-family: 'rubrikmedium';margin: 10px 0;}
-.subhead-title{font-size: 18px;font-family: 'rubrikmedium';margin: 10px 0; text-align: center; color: #fff;}
+.subhead-title{font-size: 18px;font-family: 'rubrikmedium';margin: 10px 0 30px; text-align: center; color: #fff;}
 .menu-btn,.mob-menu-list{display: none;}
 div.facebook .pp_previous{background: url(../img/prettyPhoto/facebook/btnPrevious.png) center left no-repeat;}
 div.facebook .pp_next{background: url(../img/prettyPhoto/facebook/btnNext.png) center right no-repeat;}
@@ -295,7 +296,7 @@ div.facebook  a.pp_close {right: 10px;top: -9px;width: 25px;height: 25px;backgro
 .ply-schd-inner .media-list-wrpr{padding: 25px 0 0 30px;}
 .ply-schd-inner .col-sm-7{border-left: 1px solid #ae6900;}
 .ply-schd-inner .cust-inp-wrpr li label{font-size: 14px;}
-.media-list-wrpr-btm{height: 450px;}
+.media-list-wrpr-btm{max-height: 450px;}
 .terms-check-wrpr h3{color: #c7c6cb;font-size: 14px;font-family: 'rubrikregular';text-decoration: underline;}
 .terms-check-wrpr label{color: #d2d2d5;font-size: 10px;font-family: 'rubrikregular';display: block;position: relative;max-width: 510px;margin: 0 auto;line-height: 1.5;width: 100%;}
 .terms-check-wrpr label:after{position: absolute;width: 23px;height: 23px;border: 1px solid #8e90a0;content: '';left: -38px;top: 0;padding-top: 2px;font-size: 14px;}

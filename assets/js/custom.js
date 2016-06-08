@@ -161,9 +161,9 @@ function playerFilterData(playerID){
 		          				var fbDesc = '';
 		          				filterHtml += '<div class="col-xs-4 col-xs-20 light-box-wrpr"><div class="row">';
 		          				if(filterValue[i].olympic_qulified == 1){
-				                    fbDesc += 'Proud to support '+filterValue[i].name+' in the Rio Olympics 2016. #GarvHai @adani';
+				                    fbDesc += 'Proud to support '+filterValue[i].name+' in the Rio Olympics 2016. #GarvHai by #Adani';
 				                  }else{
-				                    fbDesc += 'Proud to support '+filterValue[i].name+'. #GarvHai @adani';
+				                    fbDesc += 'Proud to support '+filterValue[i].name+'. #GarvHai by #Adani';
 				                  }
 		          				if(filterValue[i].type == 'image'){
 		          					entryArray = filterValue[i].media_value.split('.');
