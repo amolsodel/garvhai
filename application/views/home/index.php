@@ -275,7 +275,7 @@
                             if(isset($records)){
                               foreach($records as $playerData) { 
                                 $optionSelected = '';
-                                if($playerData['id'] == '1'){ $optionSelected = 'selected="selected"'; }
+                                if($playerData['id'] == '4'){ $optionSelected = 'selected="selected"'; }
                                 ?>
                                 <option <?php echo $optionSelected; ?> value="<?php echo $playerData['id'];?>"><?php echo $playerData['name'];?></option>
                                 <?php }
