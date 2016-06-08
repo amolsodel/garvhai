@@ -578,7 +578,7 @@
       <div class="modal-footer">
         <div class="heros-social-links">
         <ul class="list-inline">
-          <li id="fbShareData" data-name="" data-description=""><a id="largeShare" href="/" data-image="" data-title="" data-desc="" class="social-icon-top btnShare"><img src="<?php echo base_url(); ?>assets/img/fb-w.png"></a></li>
+          <li id="fbShareData" data-name="" data-description=""><a id="largeShare" href="http://garvhai.in" data-image="" data-title="" data-desc="" class="social-icon-top btnShare"><img src="<?php echo base_url(); ?>assets/img/fb-w.png"></a></li>
           <li><a id="largeTWShare" href="" class="social-icon-top tw-user-profile" data-qualified="" data-username=""><img src="<?php echo base_url(); ?>assets/img/tw-w.png"></a></li>
         </ul>
       </div>
