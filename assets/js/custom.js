@@ -133,7 +133,7 @@ $(document).ready(function(){
 	    $("#largeTWShare").attr("data-username",$(this).attr('data-title'));	    
 	    $("#largeTWShare").attr("data-qualified",$(this).attr('data-qualified'));
 	    $('#fbShareData').html('');
-        $('#fbShareData').html('<a id="largeShare" href="'+baseUrl+'" data-image="'+$(this).attr('data-image')+'" data-title="'+$(this).attr('data-title')+'" data-desc="'+$(this).attr('data-desc')+'" class="social-icon-top btnShare"><img src="'+baseUrl+'assets/img/fb-w.png"></a>');
+        $('#fbShareData').html('<a id="largeShare" href="http://garvhai.in" data-image="'+$(this).attr('data-image')+'" data-title="'+$(this).attr('data-title')+'" data-desc="'+$(this).attr('data-desc')+'" class="social-icon-top btnShare"><img src="'+baseUrl+'assets/img/fb-w.png"></a>');
 
 	    $('#myModal').modal('show');
 	});
