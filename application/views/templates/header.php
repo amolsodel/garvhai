@@ -60,7 +60,7 @@
         <nav id="topNav" class="main-nav navbar-fixed-top">
           <ul class="nav navbar-nav">
             <li class="hidden-small adani-logo">
-              <a href="#"><img src="<?php echo base_url(); ?>assets/img/adani.png"></a>
+              <a href="http://www.adani.com/" target="_blank"><img src="<?php echo base_url(); ?>assets/img/adani.png"></a>
             </li>
             <li class="logo-li"><a href="#" data-href="#video-wrpr" class="page-scroll">
             <img src="<?php echo base_url(); ?>assets/img/logo.png" class="img-responsive">
