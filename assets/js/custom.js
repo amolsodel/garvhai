@@ -140,7 +140,7 @@ $(document).ready(function(){
 });
 $('#carousel-example-generic').bind('slid.bs.carousel', function (e) {
         $('#fbShareData').html('');
-        $('#fbShareData').html('<a id="largeShare" href="'+baseUrl+'" data-image="'+$('#carousel-example-generic').find('.active').find('img').attr('src')+'" data-title="'+$("#fbShareData").attr('data-name')+'" data-desc="'+$("#fbShareData").attr('data-description')+'" class="social-icon-top btnShare"><img src="'+baseUrl+'assets/img/fb-w.png"></a>');
+        $('#fbShareData').html('<a id="largeShare" href="http://garvhai.in" data-image="'+$('#carousel-example-generic').find('.active').find('img').attr('src')+'" data-title="'+$("#fbShareData").attr('data-name')+'" data-desc="'+$("#fbShareData").attr('data-description')+'" class="social-icon-top btnShare"><img src="'+baseUrl+'assets/img/fb-w.png"></a>');
 	//$("#largeShare").attr('data-image',$('#carousel-example-generic').find('.active').find('img').attr('src'));
     
 })
