@@ -110,6 +110,7 @@
               $(this).parents('.heros-list').find('.hover-overlays').hide();
               $('.col-sm-6 .cust-inp-wrpr').find('input').prop('checked',false);
               $('.cust-inp-wrpr').find('input[id="players_'+playerId+'"]').prop('checked',true);
+              $('.user-prof-wrpr').addClass('hidden');
               $('body').addClass('loading');
               playerFilterData(playerId);
               $("body, html").animate({
