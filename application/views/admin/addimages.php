@@ -12,8 +12,11 @@
         </div>
         <div class="panel-body">
 			<form enctype="multipart/form-data" method="post" accept-charset="utf-8">
-			  <p>Upload file(s):</p>
-			  <?php echo form_upload('uploadedimages[]','','multiple'); ?>
+			  <p>Upload thumbnail:</p>
+			  <?php echo form_upload('uploadedimages[]',''); ?>
+			  <hr>
+			  <p>Upload Image:</p>
+			  <?php echo form_upload('uploadedimages[]',''); ?>
 			  <br />
 			  <br />
 			  <?php echo form_submit('submit','Upload');?>
