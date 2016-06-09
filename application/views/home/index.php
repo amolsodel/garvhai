@@ -25,10 +25,10 @@
       <?php }*/ ?>
         
       <div class="video-play-mute">  
-      <?php if( !$detect->isMobile()){ ?>        
+      <?php if( !$detect->isMobile()) { ?>        
           <a id="pause" href="#" class="active pause-video-img">&nbsp;</a>
       <?php }else{ ?>
-          <a id="pause" href="#" class="active play-video-img">&nbsp;</a>
+          <a id="play" href="#" class="active play-video-img">&nbsp;</a>
        <?php  } ?>
           <a id="mutedd" href="#" class="active1 mute-video-img">&nbsp;</a>
           <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -57,6 +57,19 @@
                       $this.removeClass('mute-video-img');
                       $this.addClass('unmute-video-img');
                       $('#youtube_player')[0].contentWindow.postMessage('{"event":"command","func":"' + 'mute' + '","args":""}', '*');
+                  }
+          });
+          $('#play').on('click', function() {
+                  var $this = $(this);
+                  $this.toggleClass('active');
+                  if($this.hasClass('active')){
+                      $this.removeClass('pause-video-img');
+                      $this.addClass('play-video-img');
+                      $('#youtube_player')[0].contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');        
+                  } else {                      
+                      $this.removeClass('play-video-img');
+                      $this.addClass('pause-video-img');
+                      $('#youtube_player')[0].contentWindow.postMessage('{"event":"command","func":"' + 'playVideo' + '","args":""}', '*');
                   }
           });
           </script>
