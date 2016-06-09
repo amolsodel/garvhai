@@ -5,6 +5,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="decription" content="Everyone cheers for the winners, for the champions, for the ones who bring glory and pride to the nation. Now, it's time to cheer for those who are on their way to greatness. Because our pride is their victory. Let's come together and say - #GarvHai">
+    <meta name="keywords" content="Sports, Olympic, Olympics 2016, Rio Olympics 2016, Running, Boxing, Shooting, Shotput">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Garvhai</title>
     <!-- Bootstrap -->
