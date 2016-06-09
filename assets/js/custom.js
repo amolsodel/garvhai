@@ -14,7 +14,7 @@ $(document).ready(function(){
         var docHeight = $(document).height();
         for (var i=0; i < aArray.length; i++) {
             var theID = aArray[i];
-            var divPos = $(theID).offset().top; // get the offset of the div from the top of page
+            var divPos = ($(theID).offset().top)-50; // get the offset of the div from the top of page
             var divHeight = $(theID).height(); // get the height of the div in question
 			if ( (($('#hero-wrpr').offset().top)-50) < windowPos ) {
 				$('#pause').removeClass('active');
@@ -144,7 +144,7 @@ $(document).ready(function(){
 });
 $('#carousel-example-generic').bind('slid.bs.carousel', function (e) {
         $('#fbShareData').html('');
-        $('#fbShareData').html('<a id="largeShare" href="'+baseUrl+'" data-image="'+$('#carousel-example-generic').find('.active').find('img').attr('src')+'" data-title="'+$("#fbShareData").attr('data-name')+'" data-desc="'+$("#fbShareData").attr('data-description')+'" class="social-icon-top btnShare"><img src="'+baseUrl+'assets/img/fb-w.png"></a>');
+        $('#fbShareData').html('<a id="largeShare" href="http://garvhai.in" data-image="'+$('#carousel-example-generic').find('.active').find('img').attr('src')+'" data-title="'+$("#fbShareData").attr('data-name')+'" data-desc="'+$("#fbShareData").attr('data-description')+'" class="social-icon-top btnShare"><img src="'+baseUrl+'assets/img/fb-w.png"></a>');
 	//$("#largeShare").attr('data-image',$('#carousel-example-generic').find('.active').find('img').attr('src'));
     
 })

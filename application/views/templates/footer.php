@@ -26,7 +26,7 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="<?php echo base_url(); ?>assets/js/bootstrap.min.js"></script>
     <script src="<?php echo base_url(); ?>assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/js/custom.js?ver=0.3" type="text/javascript" charset="utf-8"></script>
+    <script src="<?php echo base_url(); ?>assets/js/custom.js?ver=0.4" type="text/javascript" charset="utf-8"></script>
 
     <script type="text/javascript">
      
@@ -94,11 +94,11 @@
     				      reomoveItem();
     				      $('.hero-detail-info').addClass('left').addClass('bottom');
     				    }  
-            }else{
-		          $("body, html").animate({
-		                scrollTop: $("#hero-wrpr").offset().top
-		            }, 600);
-		        }
+               
+            }
+            $("body, html").animate({
+                    scrollTop: $("#hero-wrpr").offset().top
+                }, 600);
 
             if(playerMode != 'videos'){
               $(this).parents('.overlay-wrpr').removeClass('active-mob-overlay');
@@ -300,7 +300,7 @@
                     fbDesc += 'Proud to support '+data.modal_data[0].name+'. #GarvHai by #Adani';
                   }
                   socialHtml += '<li><a href="http://garvhai.in" class="social-icon-top fb-user-profile" data-desc="'+fbDesc+'" data-title="'+data.modal_data[0].name+'" data-image="'+baseUrl+'uploads/'+data.modal_data[0].profile_photo+'"><img src="'+baseUrl+'assets/img/fb-w.png"></a></li><li><a href="javascript:void(0)" class="social-icon-top tw-user-profile" data-qualified="'+data.modal_data[0].olympic_qulified+'" data-username="'+data.modal_data[0].name+'"><img src="'+baseUrl+'assets/img/tw-w.png"></a></li>';
-                  mobileFBSocialHtml += '<a href="'+baseUrl+'" class="social-icon-top fb-user-profile" data-desc="'+fbDesc+'" data-title="'+data.modal_data[0].name+'" data-image="'+baseUrl+'uploads/'+data.modal_data[0].profile_photo+'"><img src="'+baseUrl+'assets/img/fb-w.png"></a>';
+                  mobileFBSocialHtml += '<a href="http://garvhai.in" class="social-icon-top fb-user-profile" data-desc="'+fbDesc+'" data-title="'+data.modal_data[0].name+'" data-image="'+baseUrl+'uploads/'+data.modal_data[0].profile_photo+'"><img src="'+baseUrl+'assets/img/fb-w.png"></a>';
                   mobileTWSocialHtml += '<a href="javascript:void(0)" class="social-icon-top tw-user-profile" data-qualified="'+data.modal_data[0].olympic_qulified+'" data-username="'+data.modal_data[0].name+'"><img src="'+baseUrl+'assets/img/tw-w.png"></a>';
                     $('.hero-detail-inner-media').addClass('hidden');
                     $('.hero-detail-inner-profile').removeClass('hidden');

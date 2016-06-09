@@ -28,9 +28,9 @@ class Home_model extends CI_Model {
         }else if($mode == 'videos'){
             $query = $this->db->query('SELECT gm.*,gp.name,gp.profile_photo,gp.olympic_qulified FROM garvhai_players_media gm INNER JOIN garvhai_players gp ON gp.id = gm.player_id WHERE gm.player_id = '.$player_id.' AND gm.type <> "social" LIMIT 8');
         }else if($mode == 'allmedia'){
-            $query = $this->db->query('SELECT gm.*,gp.name,gp.profile_photo,gp.olympic_qulified FROM garvhai_players_media gm INNER JOIN garvhai_players gp ON gp.id = gm.player_id WHERE gm.type = "social"');
+            $query = $this->db->query('SELECT gm.*,gp.name,gp.profile_photo,gp.olympic_qulified FROM garvhai_players_media gm INNER JOIN garvhai_players gp ON gp.id = gm.player_id WHERE gm.type = "social" ORDER BY gm.published_date DESC');
         }else if($mode == 'media'){
-            $query = $this->db->query('SELECT gm.*,gp.name,gp.profile_photo,gp.olympic_qulified FROM garvhai_players_media gm INNER JOIN garvhai_players gp ON gp.id = gm.player_id WHERE gm.player_id = '.$player_id.' AND gm.type = "social"');
+            $query = $this->db->query('SELECT gm.*,gp.name,gp.profile_photo,gp.olympic_qulified FROM garvhai_players_media gm INNER JOIN garvhai_players gp ON gp.id = gm.player_id WHERE gm.player_id = '.$player_id.' AND gm.type = "social" ORDER BY gm.published_date DESC');
             //$this->db->get_where('garvhai_players_media', array('player_id' => $player_id,'type' => 'social'));
         }
         //echo $this->db->last_query(); exit();
