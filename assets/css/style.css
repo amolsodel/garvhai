@@ -103,7 +103,7 @@ html,body{height: 100%;font-family: 'rubrikregular';color: #000;font-size: 12px;
 .main-header .navbar-nav>.nav-active>a,.main-header .navbar-nav>.nav-active>a:hover{color: #f90;}
 .main-header .navbar-nav>.nav-active{position: relative;}
 .main-header .navbar-nav>.nav-active:before{content: '\e114';font-family: 'Glyphicons Halflings';font-style: normal;font-weight: 400;line-height: 1;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;width: 100%;text-align: center;bottom: -12px;left: 0;font-size: 13px;color: #f90;position: absolute;}
-.main-header .navbar-nav>li>a{font-family: 'rubriksemibold';font-size: 12px;margin-top: 7px;}
+.main-header .navbar-nav>li>a{font-family: 'rubriksemibold';font-size: 14px;margin-top: 7px;}
 .main-header .navbar-nav>li:last-child>a{margin-top: 0;}
 .bottom-header-wrpr .nav li+li{margin-left: 56px;}
 .bottom-header-wrpr .nav li.adani-logo{margin-left: 4px;}
@@ -320,7 +320,7 @@ div.facebook  a.pp_close {right: 10px;top: -9px;width: 25px;height: 25px;backgro
 .static-page .about-title{margin-bottom: 20px;}
 .static-page .about-discrb1{line-height: 1.3;text-align:justify;}
 
-.video-play-mute {position: absolute;bottom: 80px;right: 50px;}
+.video-play-mute {position: absolute;bottom: 90px;right: 50px;}
 .video-play-mute a {text-decoration: none;}
 .pause-video-img{float: left;background: url("../img/sprite.png");width: 30px;height: 30px;background-position: -48px 0px;}
 .play-video-img{float: left;background: url("../img/sprite.png");width: 30px;height: 30px;background-position: -9px 0px;}
@@ -419,6 +419,11 @@ div.facebook  a.pp_close {right: 10px;top: -9px;width: 25px;height: 25px;backgro
     .ply-schd-inner {position: absolute;left: 0;right: 0;top: 50%;-webkit-transform: translateY(-50%);-moz-transform: translateY(-50%);-o-transform: translateY(-50%);-ms-transform: translateY(-50%);transform: translateY(-50%);}
 }
 @media(max-width: 767px){
+.video-wrpr .embed-responsive{padding-bottom:52.25%;}
+.top-video-info{position:static;margin-top:-320px;}
+.top-video-info>div{padding-top:300px;}
+.top-video-title{background:#000;margin:0px;padding:20px 0 15px;}
+.top-video-discrp{background:#000;}
 .ply-schd-inner .media-list-wrpr{padding: 0;}
 .players-schedule-wrpr{padding: 30px 15px 30px;}
 .ply-schd-inner .col-sm-7{margin-top: 30px;border: 0;}
@@ -432,6 +437,9 @@ div.facebook  a.pp_close {right: 10px;top: -9px;width: 25px;height: 25px;backgro
 .static-page .simpleList{font-size: 12px;}
 .contact-wrpr1{padding-top: 117px;}
 }
+
+
+
 @media(max-width: 600px){
     .user-prof-wrpr {position: fixed;z-index: 99999;}
     .close-overlay {position: absolute;right: 0;top: 0;width: 30px;height: 30px;background-color: #f90;color: #fff;display: block;text-align: center;font-size: 18px;padding: 3px 0 0;}
