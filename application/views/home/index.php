@@ -306,14 +306,16 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-xs-12">
-            <div class="row">              
+            <div class="row">
+              <?php if( !$detect->isMobile()) { ?>
+              <div class="know-txt">
+                Catch our mighty Athletes in action and share it with the world.
+              </div>
+              <?php } ?>
               <div class="col-xs-4 col-xs-40 light-box-wrpr-fliter">
                 <div>
                   <div class="col-xs-12">
                     <div class="hero-filter hero-filter-desk clearfix">
-                      <div class="col-xs-12">
-                        <div class="filter-title">Catch our mighty Athletes in action and share it with the world.</div>                     
-                      </div>
                         <?php 
                         if(isset($records)){
                           $count = 0;
@@ -448,7 +450,7 @@
                 </div>
               </div>
               <div class="form-group terms-check-wrpr text-center">
-                <h3 class="text-uppercase"><a href="/index.php/home/terms_condition">Terms & Conditions</a></h3>
+                <h3 class="text-uppercase"><a href="/index.php/pages/terms_of_use">Terms & Conditions</a></h3>
                 <div class="custom-check-wrpr">
                   <input id="tnc-inp" type="checkbox">
                   <label for="tnc-inp" class="text-uppercase">I hereby confirm that the details furnished above are mine and are true and correct to the best of my knowledge and belief. I have read the Privacy Policy & I authorize Garv Hai Website and its partners to call / email / SMS me for any further communication.</label>                  
