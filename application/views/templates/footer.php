@@ -96,14 +96,14 @@
     				    }  
                
             }
-            $("body, html").animate({
-                    scrollTop: $("#hero-wrpr").offset().top
-                }, 600);
-
+            
             if(playerMode != 'videos'){
               $(this).parents('.overlay-wrpr').removeClass('active-mob-overlay');
               $(this).parents('.heros-list').find('.hover-overlays').show();
               $(this).parents('.overlay-wrpr').addClass('active-img').find('.hover-overlays').hide();
+              $("body, html").animate({
+                    scrollTop: $("#hero-wrpr").offset().top
+                }, 600);
               showModalContent(playerId,playerMode,'mediaListWrpr');
             }else{
               $('.hero-detail-info').addClass('hidden');
