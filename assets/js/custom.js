@@ -14,7 +14,7 @@ $(document).ready(function(){
         var docHeight = $(document).height();
         for (var i=0; i < aArray.length; i++) {
             var theID = aArray[i];
-            var divPos = $(theID).offset().top; // get the offset of the div from the top of page
+            var divPos = ($(theID).offset().top)-50; // get the offset of the div from the top of page
             var divHeight = $(theID).height(); // get the height of the div in question
 			if ( (($('#hero-wrpr').offset().top)-50) < windowPos ) {
 				$('#pause').removeClass('pause-video-img');

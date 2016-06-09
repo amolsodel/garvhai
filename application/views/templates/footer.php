@@ -26,7 +26,7 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="<?php echo base_url(); ?>assets/js/bootstrap.min.js"></script>
     <script src="<?php echo base_url(); ?>assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/js/custom.js?ver=0.3" type="text/javascript" charset="utf-8"></script>
+    <script src="<?php echo base_url(); ?>assets/js/custom.js?ver=0.4" type="text/javascript" charset="utf-8"></script>
 
     <script type="text/javascript">
      
@@ -94,11 +94,11 @@
     				      reomoveItem();
     				      $('.hero-detail-info').addClass('left').addClass('bottom');
     				    }  
-            }else{
-		          $("body, html").animate({
-		                scrollTop: $("#hero-wrpr").offset().top
-		            }, 600);
-		        }
+               
+            }
+            $("body, html").animate({
+                    scrollTop: $("#hero-wrpr").offset().top
+                }, 600);
 
             if(playerMode != 'videos'){
               $(this).parents('.overlay-wrpr').removeClass('active-mob-overlay');
