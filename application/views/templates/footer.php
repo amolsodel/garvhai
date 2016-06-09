@@ -94,11 +94,11 @@
     				      reomoveItem();
     				      $('.hero-detail-info').addClass('left').addClass('bottom');
     				    }  
-            }else{
-		          $("body, html").animate({
-		                scrollTop: $("#hero-wrpr").offset().top
-		            }, 600);
-		        }
+               
+            }
+            $("body, html").animate({
+                    scrollTop: $("#hero-wrpr").offset().top
+                }, 600);
 
             if(playerMode != 'videos'){
               $(this).parents('.overlay-wrpr').removeClass('active-mob-overlay');
