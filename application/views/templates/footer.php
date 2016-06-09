@@ -26,7 +26,7 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="<?php echo base_url(); ?>assets/js/bootstrap.min.js"></script>
     <script src="<?php echo base_url(); ?>assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/js/custom.js?ver=0.4" type="text/javascript" charset="utf-8"></script>
+    <script src="<?php echo base_url(); ?>assets/js/custom.js?ver=0.5" type="text/javascript" charset="utf-8"></script>
 
     <script type="text/javascript">
      
