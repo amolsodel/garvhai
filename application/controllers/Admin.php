@@ -78,7 +78,7 @@
 
 	            $config['upload_path'] = './uploads/';
 		        $config['allowed_types'] = 'gif|jpg|png';
-		        $config['max_size'] = '100';
+		        $config['max_size'] = '10000';
 		        $config['max_width']  = '1024';
 		        $config['max_height']  = '768';
 
@@ -149,7 +149,7 @@
 	        	$data['upload_error'] = urldecode($upload_error);
 	        	$config['upload_path'] = './uploads/';
 		        $config['allowed_types'] = 'gif|jpg|png';
-		        $config['max_size'] = '100';
+		        $config['max_size'] = '10000';
 		        $config['max_width']  = '1024';
 		        $config['max_height']  = '768';
 
@@ -174,7 +174,7 @@
 	        	$data['title'] = 'Edit Player';
 	        	$config['upload_path'] = './uploads/';
 		        $config['allowed_types'] = 'gif|jpg|png';
-		        $config['max_size'] = '100';
+		        $config['max_size'] = '10000';
 		        $config['max_width']  = '1024';
 		        $config['max_height']  = '768';
 
@@ -220,7 +220,7 @@
 	        	$data['title'] = 'Add media for player';
 	        	$config['upload_path'] = './uploads/';
 		        $config['allowed_types'] = 'gif|jpg|png';
-		        $config['max_size'] = '100';
+		        $config['max_size'] = '10000';
 		        $config['max_width']  = '1024';
 		        $config['max_height']  = '768';
 
@@ -327,7 +327,7 @@
 	        	$data['title'] = 'Add images for player';
 	        	$config['upload_path'] = './uploads/';
 		        $config['allowed_types'] = 'gif|jpg|png';
-		        $config['max_size'] = '100';
+		        $config['max_size'] = '10000';
 		        $config['max_width']  = '1024';
 		        $config['max_height']  = '768';
 
@@ -410,7 +410,7 @@
 	        	$data['title'] = 'Add video';
 	        	$config['upload_path'] = './uploads/';
 		        $config['allowed_types'] = 'gif|jpg|png';
-		        $config['max_size'] = '100';
+		        $config['max_size'] = '10000';
 		        $config['max_width']  = '1024';
 		        $config['max_height']  = '768';
 
