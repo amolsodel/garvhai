@@ -34,6 +34,11 @@
                 <textarea name="championship" rows="10" cols="80"><?php if(isset($player)) echo $player['championship'];?></textarea>
                 <hr />
 
+                <?php $checkedOpt = isset($player['olympic_qulified']) ? 1 : 0;?>
+                <input type="checkbox" name="olympic_qulified" value="<?php echo $checkedOpt; ?>" <?php if($player['olympic_qulified'] == 1) { echo "checked='checked'"; } ?> />
+                <label for="olympic_qulified">is_Olympic_Quilified</label>
+                <hr />
+
                 <?php $buttom_txt = isset($player) ? 'Update Player' : 'Create New Player';?>
                 <input type="submit" name="submit" value="<?php  echo $buttom_txt;?>" />
 
