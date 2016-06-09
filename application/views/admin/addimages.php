@@ -11,13 +11,13 @@
             <h3 class="panel-title">Add Images</h3>
         </div>
         <div class="panel-body">
-			<?php echo form_open_multipart();?>
+			<form enctype="multipart/form-data" method="post" accept-charset="utf-8">
 			  <p>Upload file(s):</p>
 			  <?php echo form_upload('uploadedimages[]','','multiple'); ?>
 			  <br />
 			  <br />
 			  <?php echo form_submit('submit','Upload');?>
-			<?php echo form_close();?>
+			</form>
 		</div>
 	</div>
 	<?php

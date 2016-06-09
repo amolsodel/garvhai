@@ -10,7 +10,7 @@
             <h3 class="panel-title">Add Media</h3>
         </div>
         <div class="panel-body">
-			<?php echo form_open_multipart();?>
+			<form enctype="multipart/form-data" method="post" accept-charset="utf-8">
 			  <label for="videothumb">Video Thumbnail</label>
               <input type="file" name="videothumb" size="100" />
 			  <br />
@@ -21,7 +21,7 @@
               <input type="input" name="videotitle" />
 			  <br />
 			  <?php echo form_submit('submit','Upload');?>
-			<?php echo form_close();?>
+			</form>
 		</div>
 	</div>
 </div>
