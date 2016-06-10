@@ -171,10 +171,10 @@ function playerFilterData(playerID){
 				                  }
 		          				if(filterValue[i].type == 'image'){
 		          					entryArray = filterValue[i].media_value.split('.');
-		          					filterHtml += '<a><img src="'+baseUrl+'uploads/'+filterValue[i].media_value+'" class="full-width-img"><div class="light-box-overlay image-overlay" data-id="'+filterValue[i].id+'" data-desc="'+fbDesc+'" data-title="'+filterValue[i].name+'" data-qualified="'+filterValue[i].olympic_qulified+'" data-image="'+baseUrl+'uploads/'+entryArray[0]+'-l.jpg"></div></a>';
-		          					modalInnerHtml += '<div class="item" id="modalImg_'+filterValue[i].id+'"><img src="'+baseUrl+'uploads/'+filterValue[i].media_value.split('.', 1)+'-l.jpg"></div>';
+		          					filterHtml += '<a><img src="'+baseUrl+'uploads/'+filterValue[i].media_value+'?'+Date.parse(filterValue[i].timestamp)+'" class="full-width-img"><div class="light-box-overlay image-overlay" data-id="'+filterValue[i].id+'" data-desc="'+fbDesc+'" data-title="'+filterValue[i].name+'" data-qualified="'+filterValue[i].olympic_qulified+'" data-image="'+baseUrl+'uploads/'+entryArray[0]+'-l.jpg?'+Date.parse(filterValue[i].timestamp)+'"></div></a>';
+		          					modalInnerHtml += '<div class="item" id="modalImg_'+filterValue[i].id+'"><img src="'+baseUrl+'uploads/'+filterValue[i].media_value.split('.', 1)+'-l.jpg?'+Date.parse(filterValue[i].timestamp)+'"></div>';
 		          				}else if(filterValue[i].type == 'video'){
-		          					filterHtml += '<a href="#"><img src="'+baseUrl+'uploads/'+filterValue[i].video_thumbnail+'" class="full-width-img"><div class="light-box-overlay video-overlay" data-id="'+filterValue[i].id+'"></div></a>';
+		          					filterHtml += '<a href="#"><img src="'+baseUrl+'uploads/'+filterValue[i].video_thumbnail+'?'+Date.parse(filterValue[i].timestamp)+'" class="full-width-img"><div class="light-box-overlay video-overlay" data-id="'+filterValue[i].id+'"></div></a>';
 		          					modalInnerHtml += '<div class="item" id="modalImg_'+filterValue[i].id+'"><div class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item" src="'+filterValue[i].media_value+'" frameborder="0" allowfullscreen></iframe></div></div>';
 		          				}
                  				filterHtml += '</div></div>';
