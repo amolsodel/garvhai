@@ -303,8 +303,10 @@
 			{
 				if($i == 0){
 					$img_nm = $files['name'][0];
+					$img_nm = explode('.', $img_nm);
+					$img_nm = $img_nm[0].time().'.'.$img_nm[1];
 				}else{
-					$img_nm = explode('.', $files['name'][0]);
+					$img_nm = explode('.', $img_nm);
 					$img_nm = $img_nm[0].'-l.jpg';
 				}
 				$_FILES['uploadedimage']['name'] = $img_nm;
