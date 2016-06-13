@@ -407,7 +407,7 @@
     <section id="about" class="about-wrpr">
       <div class="about-inner">
         <h2 class="about-title text-uppercase text-center">#GarvHai: The Adani Initiative</h2>
-        <p class="about-discrb text-center">"Sport has the power to build a better and stronger nation. Which is why we have started the <span>#GarvHai</span> initiative - a humble effort by us to support budding Olympians and bring glory to the nation. We chose athletes from all parts of India to assist them to qualify for the Games much before the Olympics begin. These men and women have fought the odds and made great sacrifices, all for one vision - to bring glory to India. We need you to stand up and say 'Garv Hai'!<br/> Join us, and together, let's make history."</p>
+        <p class="about-discrb text-center">"Sport has the power to build a better and a stronger nation. Through our humble initiative <span>#GarvHai</span> , we're privileged to support some of the best sporting talent in the country. Talented athletes were chosen from all parts of India and assisted to qualify for the Games much before the Olympics qualifiers began. These men and women have fought the odds and made great sacrifices, all for one vision - to bring glory to India. We need you to stand up and say 'Garv Hai'!<br/> Join us, and together, let's make history."</p>
       </div>
     </section>
     <section id="contact" class="contact-wrpr">
@@ -450,7 +450,7 @@
                 </div>
               </div>
               <div class="form-group terms-check-wrpr text-center">
-                <h3 class="text-uppercase"><a href="/index.php/pages/terms_of_use">Terms & Conditions</a></h3>
+                <h3 class="text-uppercase"><a target="_blank" href="/index.php/pages/terms_of_use">Terms & Conditions</a></h3>
                 <div class="custom-check-wrpr">
                   <input id="tnc-inp" type="checkbox">
                   <label for="tnc-inp" class="text-uppercase">I hereby confirm that the details furnished above are mine and are true and correct to the best of my knowledge and belief. I have read the Privacy Policy & I authorize Garv Hai Website and its partners to call / email / SMS me for any further communication.</label>                  

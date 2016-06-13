@@ -111,6 +111,7 @@
               $(this).parents('.heros-list').find('.hover-overlays').hide();
               $('.col-sm-6 .cust-inp-wrpr').find('input').prop('checked',false);
               $('.cust-inp-wrpr').find('input[id="players_'+playerId+'"]').prop('checked',true);
+              $("#mobileFilter option[value=" + playerId +"]").prop("selected", true);
               $('body').addClass('loading');
               playerFilterData(playerId);
               $("body, html").animate({
