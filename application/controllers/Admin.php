@@ -298,9 +298,18 @@
 			$config['allowed_types'] = 'gif|jpg|png';*/
 
 			// now, taking into account that there can be more than one file, for each file we will have to do the upload
+			$img_nm = '';
 			for ($i = 0; $i < $number_of_files; $i++)
 			{
-				$_FILES['uploadedimage']['name'] = $files['name'][$i];
+				if($i == 0){
+					$img_nm = $files['name'][0];
+					$img_nm = explode('.', $img_nm);
+					$img_nm = $img_nm[0].time().'.'.$img_nm[1];
+				}else{
+					$img_nm = explode('.', $img_nm);
+					$img_nm = $img_nm[0].'-l.jpg';
+				}
+				$_FILES['uploadedimage']['name'] = $img_nm;
 				$_FILES['uploadedimage']['type'] = $files['type'][$i];
 				$_FILES['uploadedimage']['tmp_name'] = $files['tmp_name'][$i];
 				$_FILES['uploadedimage']['error'] = $files['error'][$i];
@@ -310,7 +319,9 @@
 				$this->upload->initialize($config);*/
 				if ($this->upload->do_upload('uploadedimage'))
 				{
-					$this->_uploaded[$i] = $this->upload->data();
+					if($i == 0){
+						$this->_uploaded[$i] = $this->upload->data();
+					}
 				}
 				else
 				{
@@ -360,6 +371,14 @@
 						$data['success'] = 'Added Image(s) sccessfully!';
 						$data['player_id'] = $player_id;
 						
+						$this->load->view('templates/admin_header', $data);
+			            $this->load->view('templates/admin_nav');
+			        	$this->load->view('admin/addimages',$data);
+			    		$this->load->view('templates/nav_close');
+			        	$this->load->view('templates/admin_footer');
+					}else
+					{
+						$this->form_validation->set_message('fileupload_check', 'Please select file to upload!');
 						$this->load->view('templates/admin_header', $data);
 			            $this->load->view('templates/admin_nav');
 			        	$this->load->view('admin/addimages',$data);
