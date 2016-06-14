@@ -121,7 +121,7 @@
 					}
 	            }
 	        }else{
-	        	redirect('/admin');
+	        	header('Location:http://garvhai.in/index.php/admin/');
 	        }
         }
 
@@ -129,9 +129,9 @@
         {
         	if(isset($this->session->username)){
 	        	$delete_response = $this->admin_model->deleteplayer($slug);
-	        	redirect('/admin/dashbord');
+	        	header('Location:http://garvhai.in/index.php/admin/dashbord');
         	}else{
-	        	redirect('/admin');
+	        	header('Location:http://garvhai.in/index.php/admin/');
 	        }
         }
 
@@ -165,7 +165,7 @@
 	    		$this->load->view('templates/nav_close');
 	        	$this->load->view('templates/admin_footer');
 	        }else{
-	        	redirect('/admin');
+	        	header('Location:http://garvhai.in/index.php/admin/');
 	        }
         }
 
@@ -186,18 +186,20 @@
 
 		        if ($this->form_validation->run() === FALSE)
 	            {
-	            	redirect('admin/edit_player/'.$player_id);
+	            	header('Location:http://garvhai.in/index.php/admin/edit_player/'.$player_id);
 	            }
 	            else if( ! $this->upload->do_upload('userpic')){
 	            	$uploadError = $this->upload->display_errors();
 	            	if (strip_tags($uploadError) != 'You did not select a file to upload.'){
-	            		redirect('admin/edit_player/'.$player_id.'/'.strip_tags($uploadError));
+	            		header('Location:http://garvhai.in/index.php/admin/edit_player/'.$player_id.'/'.strip_tags($uploadError));
+	            		//redirect('admin/edit_player/'.$player_id.'/'.strip_tags($uploadError));
 	            	}else{
 		            	$data['upload_data'] = $this->upload->data();
 		            	$data['player_id'] = $player_id;
 						$update_response = $this->admin_model->updateplayer($data);
 						if($update_response){
-							redirect('admin/edit_player/'.$player_id.'/'.strip_tags("User profile updated successfully"));
+							header('Location:http://garvhai.in/index.php/admin/edit_player/'.$player_id.'/'.strip_tags("User profile updated successfully"));
+							//redirect('admin/edit_player/'.$player_id.'/'.strip_tags("User profile updated successfully"));
 						}
 		            }
 	            }else{
@@ -206,11 +208,12 @@
 					$update_response = $this->admin_model->updateplayer($data);
 					//var_dump($update_response);
 					if($update_response){
-						redirect('admin/edit_player/'.$player_id.'/'.strip_tags("User profile updated successfully"));
+						header('Location:http://garvhai.in/index.php/admin/edit_player/'.$player_id.'/'.strip_tags("User profile updated successfully"));
+						//redirect('admin/edit_player/'.$player_id.'/'.strip_tags("User profile updated successfully"));
 					}
 	            }
 	        }else{
-	        	redirect('/admin');
+	        	header('Location:http://garvhai.in/index.php/admin/');
 	        }
         }
 
@@ -266,7 +269,7 @@
 		        	$this->load->view('templates/admin_footer');
 				}
 			}else{
-	        	redirect('/admin');
+	        	header('Location:http://garvhai.in/index.php/admin/');
 	        }	
         }
 
@@ -395,7 +398,7 @@
 		        	$this->load->view('templates/admin_footer');
 				}
 			}else{
-	        	redirect('/admin');
+	        	header('Location:http://garvhai.in/index.php/admin/');
 	        }	
         }
 
@@ -418,7 +421,7 @@
 	    		$this->load->view('templates/nav_close');
 	        	$this->load->view('templates/admin_footer');
 	        }else{
-	        	redirect('/admin');
+	        	header('Location:http://garvhai.in/index.php/admin/');
 	        }
         }
 
@@ -469,7 +472,7 @@
 		        	$this->load->view('templates/admin_footer');
 	        	}
 	        }else{
-	        	redirect('/admin');
+	        	header('Location:http://garvhai.in/index.php/admin/');
 	        }
         }
 
@@ -492,7 +495,7 @@
 	    		$this->load->view('templates/nav_close');
 	        	$this->load->view('templates/admin_footer');
         	}else{
-	        	redirect('/admin');
+	        	header('Location:http://garvhai.in/index.php/admin/');
 	        }
         }
 
@@ -528,7 +531,7 @@
 		        	$this->load->view('templates/admin_footer');
 	        	}
 	        }else{
-	        	redirect('/admin');
+	        	header('Location:http://garvhai.in/index.php/admin/');
 	        }
 	        	
         }
@@ -555,7 +558,7 @@
 	    		$this->load->view('templates/nav_close');
 	        	$this->load->view('templates/admin_footer');
         	}else{
-	        	redirect('/admin');
+	        	header('Location:http://garvhai.in/index.php/admin/');
 	        }
         }
 
@@ -578,7 +581,7 @@
 	    		$this->load->view('templates/nav_close');
 	        	$this->load->view('templates/admin_footer');
 	    	}else{
-	        	redirect('/admin');
+	        	header('Location:http://garvhai.in/index.php/admin/');
 	        }
 	    }
 
@@ -586,9 +589,9 @@
 	    {
 	    	if(isset($this->session->username)){
 	        	$delete_response = $this->admin_model->deleteuser($user_id);
-	        	redirect('/admin/contact_us_user');
-	    	}else{
-	        	redirect('/admin');
+	        	header('Location:http://garvhai.in/index.php/admin/contact_us_user');
+	        }else{
+	    		header('Location:http://garvhai.in/index.php/admin/');
 	        }
 	    }
 }
