@@ -215,7 +215,7 @@ class Admin_model extends CI_Model {
 
     public function get_contact_us_user_data() {
         
-        $query = $this->db->query('SELECT * FROM garvhai_users');
+        $query = $this->db->query('SELECT * FROM garvhai_users ORDER BY id DESC');
         return $query->result_array();
     }
 
