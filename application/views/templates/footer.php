@@ -278,6 +278,7 @@
             success: function(data){
               $('#alertModal').find('.replace-content').text(JSON.stringify(data));
               $('#alertModal').modal('show');
+              $('.contact-form')[0].reset();
             }
         });
       }

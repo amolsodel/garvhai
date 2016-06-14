@@ -559,7 +559,7 @@
 	        }
         }
 
-        public function view_contact_us_user()
+        public function contact_us_user()
 	    {
 	    	if(isset($this->session->username)){
 	        	//$data['player_id'] = $player_id;
