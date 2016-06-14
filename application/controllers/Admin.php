@@ -559,4 +559,36 @@
 	        }
         }
 
-	}
+        public function contact_us_user()
+	    {
+	    	if(isset($this->session->username)){
+	        	//$data['player_id'] = $player_id;
+	        	$data['contact_us_users'] = $this->admin_model->get_contact_us_user_data();
+
+	        	if (empty($data['contact_us_users']))
+	            {
+	                show_404();
+	            }
+	            /*echo '<pre>';
+	            print_r($data['player_videos']);
+	            echo '<pre>';*/
+	            $this->load->view('templates/admin_header', $data);
+	            $this->load->view('templates/admin_nav');
+	        	$this->load->view('admin/contact_us_user',$data);
+	    		$this->load->view('templates/nav_close');
+	        	$this->load->view('templates/admin_footer');
+	    	}else{
+	        	redirect('/admin');
+	        }
+	    }
+
+	    public function delete_user($user_id)
+	    {
+	    	if(isset($this->session->username)){
+	        	$delete_response = $this->admin_model->deleteuser($slug);
+	        	redirect('/admin/contact_us_user');
+	    	}else{
+	        	redirect('/admin');
+	        }
+	    }
+}
