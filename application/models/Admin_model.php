@@ -213,4 +213,15 @@ class Admin_model extends CI_Model {
         return $data;
     }
 
+    public function get_contact_us_user_data() {
+        
+        $query = $this->db->query('SELECT * FROM garvhai_users');
+        return $query->result_array();
+    }
+
+    public function deleteuser($user_id)
+    {
+        return $this->db->delete('garvhai_users', array('id' => $user_id)); 
+    }
+
 }

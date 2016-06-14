@@ -32,5 +32,6 @@
         <ul class="nav nav-sidebar">
           <li class="active"><a href="http://garvhai.in/index.php/admin/dashbord">Player List</a></li>
           <li><a href="http://garvhai.in/index.php/admin/add_player">Add New Player <span class="sr-only">(current)</span></a></li>
+          <li><a href="http://garvhai.in/index.php/admin/view_contact_us_user">Contact Us User<span class="sr-only">(current)</span></a></li>
         </ul>
       </div>
