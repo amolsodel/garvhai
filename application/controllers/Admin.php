@@ -13,11 +13,14 @@
 
         public function index()
         {
-            $data['title'] = 'Admin Login';
-
-            $this->load->view('templates/admin_header', $data);
-            $this->load->view('admin/index', $data);
-            $this->load->view('templates/admin_footer');
+        	if(isset($this->session->username)){
+        		header('Location:http://garvhai.in/index.php/admin/dashbord');
+	        }else{
+	        	$data['title'] = 'Admin Login';
+	            $this->load->view('templates/admin_header', $data);
+	            $this->load->view('admin/index', $data);
+	            $this->load->view('templates/admin_footer');
+	        }
         }
 
         public function login(){
@@ -34,8 +37,8 @@
         		/*$this->load->view('templates/admin_header', $data);
         		$this->load->view('admin/dashbord', $data);
             	$this->load->view('templates/admin_footer');*/
-            	$this->dashbord();
-        	}else{
+        		header('Location:http://garvhai.in/index.php/admin/dashbord');
+            }else{
         		$data['error'] = 'UserId password didn\'t match' ;
 
         		$this->load->view('templates/admin_header', $data);
