@@ -585,7 +585,7 @@
 	    public function delete_user($user_id)
 	    {
 	    	if(isset($this->session->username)){
-	        	$delete_response = $this->admin_model->deleteuser($slug);
+	        	$delete_response = $this->admin_model->deleteuser($user_id);
 	        	redirect('/admin/contact_us_user');
 	    	}else{
 	        	redirect('/admin');

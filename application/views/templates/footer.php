@@ -187,6 +187,7 @@
               alertModal.modal('show');
               }
               else{
+              $('#share-exp').attr('disabled','disabled');
               addShareExperience(name, $('#email-inp').val(), mobile, cmnt);}
             }else if(name != "" && $('#email-inp').val() == '' && mobile != "" && cmnt != ""){
               alertModal.find('.replace-content').text('Please enter email-id.');
@@ -279,6 +280,7 @@
               $('#alertModal').find('.replace-content').text(JSON.stringify(data));
               $('#alertModal').modal('show');
               $('.contact-form')[0].reset();
+              $('#share-exp').removeAttr('disabled');
             }
         });
       }
