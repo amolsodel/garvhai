@@ -456,4 +456,7 @@ div.facebook  a.pp_close {right: 10px;top: -9px;width: 25px;height: 25px;backgro
 .play-video-img{float: left;background: url("../img/sprite.png");width: 30px;height: 30px;background-position: -3px 0px;}
 .unmute-video-img{float: left;background: url("../img/sprite.png");width: 30px;height: 30px;background-position: -124px 0px;}
 .mute-video-img{float: left;background: url("../img/sprite.png");width: 30px;height: 30px;background-position: -86px 0px;}
-} 
+}
+
+.overlay-wrpr:hover .full-width-img {-webkit-transform: scale(1.15);-moz-transform: scale(1.15);-ms-transform: scale(1.15);-o-transform: scale(1.15);transform: scale(1.15);-webkit-transition: all 1.5s ease;-moz-transition: all 1.5s ease;-ms-transition: all 1.5s ease;-o-transition: all 1.5s ease;transition: all 1.5s ease;}
+.overlay-wrpr .full-width-img{-webkit-transform: scale(1);-moz-transform: scale(1);-ms-transform: scale(1);-o-transform: scale(1);transform: scale(1);-webkit-transition: all 1.5s ease;-moz-transition: all 1.5s ease;-ms-transition: all 1.5s ease;-o-transition: all 1.5s ease;transition: all 1.5s ease;}
