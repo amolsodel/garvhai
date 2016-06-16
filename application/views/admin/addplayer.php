@@ -14,9 +14,8 @@
             <h3 class="panel-title"><?php echo $panel_title; ?></h3>
         </div>
         <div class="panel-body">
-            <?php $action_url = isset($player) ? 'admin/update_player/'.$player['id'] : 'admin/add_player';?>
-            <?php echo form_open_multipart($action_url); ?>
-
+            <?php $action_url = isset($player) ? 'http://garvhai.in/index.php/admin/update_player/'.$player['id'] : 'http://garvhai.in/index.php/admin/add_player';?>
+             <form action="<?php echo $action_url; ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8">
                 <label for="playername">Name</label>
                 <input type="input" name="playername" value="<?php if(isset($player)) echo $player['name'];?>" />
                 <hr />
