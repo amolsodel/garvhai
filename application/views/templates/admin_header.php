@@ -18,6 +18,6 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     <script src="<?php echo base_url(); ?>assets/js/jquery-1.9.1.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/ckeditor/ckeditor.js"></script>
+    <script src="<?php echo base_url(); ?>assets/ckeditor/ckeditor.js?ver=0.1"></script>
   </head>
   <body>
