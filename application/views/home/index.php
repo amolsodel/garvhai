@@ -1,5 +1,13 @@
    <?php require_once('Mobile_Detect.php');
     $detect = new Mobile_Detect;   ?>
+    <div style="display:none;">
+    <img src="<?php echo base_url(); ?>assets/img/bg1.jpg">
+    <img src="<?php echo base_url(); ?>assets/img/bg2.jpg">
+    <img src="<?php echo base_url(); ?>assets/img/bg3.jpg">
+    <img src="<?php echo base_url(); ?>assets/img/bg4.jpg">
+    <img src="<?php echo base_url(); ?>assets/img/bg5.jpg">
+    <img src="<?php echo base_url(); ?>assets/img/bg6.jpg">
+  </div>
    <section id="video-wrpr" class="clearfix">
     <section class="video-wrpr">
     <?php //if( !$detect->isMobile()){ ?>
@@ -319,7 +327,7 @@
                         <?php 
                         if(isset($records)){
                           $count = 0;
-                          $loopCount = 1;
+                          //$loopCount = 1;
                           foreach($records as $playerData) { 
                             if($count == 0){
                               echo '<div class="col-sm-6 col-xs-12 hidden-small">
@@ -338,14 +346,14 @@
                           <?php 
                               if($count == 4){
                                 echo '</ul>';
-                                  if($loopCount == 1){
+                                  /*if($loopCount == 1){
                                     echo '<div class="btn filter-btn text-uppercase btn-default">
                                       Videos &amp; Images
                                     </div>';
-                                  }
+                                  }*/
                                   echo '</div>';
                                 $count = 0;
-                                $loopCount = $loopCount+1;
+                                //$loopCount = $loopCount+1;
                               }
                             }
                           } ?>
