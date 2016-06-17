@@ -331,7 +331,7 @@
                           foreach($records as $playerData) { 
                             if($count == 0){
                               echo '<div class="col-sm-6 col-xs-12 hidden-small">
-                                      <ul class="cust-inp-wrpr">';
+                                      <ul class="cust-inp-wrpr gallery-player">';
                             }
                             $radioChecked = '';
                             $count=$count+1;
