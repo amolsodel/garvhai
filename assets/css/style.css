@@ -212,7 +212,8 @@ html,body{height: 100%;font-family: 'rubrikregular';color: #000;font-size: 12px;
 .image-overlay{background-image: url('../img/img-tumb.png');}
 .light-box-wrpr:hover .light-box-overlay{opacity: 1;top: 0;-webkit-transition: all ease 0.5s;-moz-transition: all ease 0.5s;-ms-transition: all ease 0.5s;-o-transition: all ease 0.5s;transition: all ease 0.5s;}
 .col-xs-40.light-box-wrpr-fliter{float: right;overflow: hidden;}
-.cust-inp-wrpr li{list-style-type: none;padding: 6%;}
+.cust-inp-wrpr li{list-style-type: none;}
+.gallery-player li{ padding: 6%;}
 .cust-inp-wrpr{padding-left: 0px;}
 .hero-filter{padding: 20px 5px 15px 5px;background-color: #f90;}
 .hero-filter-desk{position: absolute;top: 0;left: 0;width: 100%;height: 100%;z-index: 4;}
