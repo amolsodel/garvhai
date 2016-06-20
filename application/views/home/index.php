@@ -1,5 +1,13 @@
    <?php require_once('Mobile_Detect.php');
     $detect = new Mobile_Detect;   ?>
+    <div style="display:none;">
+    <img src="<?php echo base_url(); ?>assets/img/bg1.jpg">
+    <img src="<?php echo base_url(); ?>assets/img/bg2.jpg">
+    <img src="<?php echo base_url(); ?>assets/img/bg3.jpg">
+    <img src="<?php echo base_url(); ?>assets/img/bg4.jpg">
+    <img src="<?php echo base_url(); ?>assets/img/bg5.jpg">
+    <img src="<?php echo base_url(); ?>assets/img/bg6.jpg">
+  </div>
    <section id="video-wrpr" class="clearfix">
     <section class="video-wrpr">
     <?php //if( !$detect->isMobile()){ ?>
@@ -319,11 +327,11 @@
                         <?php 
                         if(isset($records)){
                           $count = 0;
-                          $loopCount = 1;
+                          //$loopCount = 1;
                           foreach($records as $playerData) { 
                             if($count == 0){
                               echo '<div class="col-sm-6 col-xs-12 hidden-small">
-                                      <ul class="cust-inp-wrpr">';
+                                      <ul class="cust-inp-wrpr gallery-player">';
                             }
                             $radioChecked = '';
                             $count=$count+1;
@@ -338,14 +346,14 @@
                           <?php 
                               if($count == 4){
                                 echo '</ul>';
-                                  if($loopCount == 1){
+                                  /*if($loopCount == 1){
                                     echo '<div class="btn filter-btn text-uppercase btn-default">
                                       Videos &amp; Images
                                     </div>';
-                                  }
+                                  }*/
                                   echo '</div>';
                                 $count = 0;
-                                $loopCount = $loopCount+1;
+                                //$loopCount = $loopCount+1;
                               }
                             }
                           } ?>
@@ -405,6 +413,54 @@
       </div>      
     </section>
     <section id="about" class="about-wrpr">
+      <div class="container fill">
+        <div id="about-carousel" class="carousel slide">
+          <div class="carousel-inner">
+            <div class="active item">
+              <div class="fill" style="background-image:url('<?php echo base_url();?>assets/img/bg1.jpg');">
+                <div class="container">
+                  <img src="<?php echo base_url();?>assets/img/bg1.jpg" class="visible-xs full-width">
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="fill" style="background-image:url('<?php echo base_url();?>assets/img/bg2.jpg');">
+                <div class="container">
+                  <img src="<?php echo base_url();?>assets/img/bg2.jpg" class="visible-xs full-width">
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="fill" style="background-image:url('<?php echo base_url();?>assets/img/bg3.jpg');">
+                <div class="container">
+                  <img src="<?php echo base_url();?>assets/img/bg3.jpg" class="visible-xs full-width">
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="fill" style="background-image:url('<?php echo base_url();?>assets/img/bg4.jpg');">
+                <div class="container">
+                  <img src="<?php echo base_url();?>assets/img/bg4.jpg" class="visible-xs full-width">
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="fill" style="background-image:url('<?php echo base_url();?>assets/img/bg5.jpg');">
+                <div class="container">
+                  <img src="<?php echo base_url();?>assets/img/bg5.jpg" class="visible-xs full-width">
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="fill" style="background-image:url('<?php echo base_url();?>assets/img/bg6.jpg');">
+                <div class="container">
+                  <img src="<?php echo base_url();?>assets/img/bg6.jpg" class="visible-xs full-width">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="about-inner">
         <h2 class="about-title text-uppercase text-center">#GarvHai: The Adani Initiative</h2>
         <p class="about-discrb text-center">"Sport has the power to build a better and a stronger nation. Through our humble initiative <span>#GarvHai</span> , we're privileged to support some of the best sporting talent in the country. Talented athletes were chosen from all parts of India and assisted to qualify for the Games much before the Olympics qualifiers began. These men and women have fought the odds and made great sacrifices, all for one vision - to bring glory to India. We need you to stand up and say 'Garv Hai'!<br/> Join us, and together, let's make history."</p>
