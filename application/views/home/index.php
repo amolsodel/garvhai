@@ -413,6 +413,54 @@
       </div>      
     </section>
     <section id="about" class="about-wrpr">
+      <div class="container fill">
+        <div id="about-carousel" class="carousel slide">
+          <div class="carousel-inner">
+            <div class="active item">
+              <div class="fill" style="background-image:url('<?php echo base_url();?>assets/img/bg1.jpg');">
+                <div class="container">
+                  <img src="<?php echo base_url();?>assets/img/bg1.jpg" class="visible-xs full-width">
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="fill" style="background-image:url('<?php echo base_url();?>assets/img/bg2.jpg');">
+                <div class="container">
+                  <img src="<?php echo base_url();?>assets/img/bg2.jpg" class="visible-xs full-width">
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="fill" style="background-image:url('<?php echo base_url();?>assets/img/bg3.jpg');">
+                <div class="container">
+                  <img src="<?php echo base_url();?>assets/img/bg3.jpg" class="visible-xs full-width">
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="fill" style="background-image:url('<?php echo base_url();?>assets/img/bg4.jpg');">
+                <div class="container">
+                  <img src="<?php echo base_url();?>assets/img/bg4.jpg" class="visible-xs full-width">
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="fill" style="background-image:url('<?php echo base_url();?>assets/img/bg5.jpg');">
+                <div class="container">
+                  <img src="<?php echo base_url();?>assets/img/bg5.jpg" class="visible-xs full-width">
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="fill" style="background-image:url('<?php echo base_url();?>assets/img/bg6.jpg');">
+                <div class="container">
+                  <img src="<?php echo base_url();?>assets/img/bg6.jpg" class="visible-xs full-width">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="about-inner">
         <h2 class="about-title text-uppercase text-center">#GarvHai: The Adani Initiative</h2>
         <p class="about-discrb text-center">"Sport has the power to build a better and a stronger nation. Through our humble initiative <span>#GarvHai</span> , we're privileged to support some of the best sporting talent in the country. Talented athletes were chosen from all parts of India and assisted to qualify for the Games much before the Olympics qualifiers began. These men and women have fought the odds and made great sacrifices, all for one vision - to bring glory to India. We need you to stand up and say 'Garv Hai'!<br/> Join us, and together, let's make history."</p>

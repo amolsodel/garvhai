@@ -91,19 +91,7 @@ $(document).ready(function(){
 
   })
 $(document).ready(function(){
-	function run(interval, frames) {
-	    var int = 1;
-	    var bg="about-wrpr"; 
-	    function func() {
-	        bg="about-wrpr about-wrpr"+int;
-         	$('#about').attr('class',bg)
-	        int++;
-	        if(int === frames) { int = 1; }
-	    }
-	    var swap = window.setInterval(func, interval);
-	}
-	run(5000, 7);
-
+	$('#about-carousel').carousel({interval: 2000});
 	$('input[name="players"]').change(function(e){
 		e.preventDefault();
 		e.stopPropagation();

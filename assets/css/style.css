@@ -269,7 +269,8 @@ div.facebook  a.pp_close {right: 10px;top: -9px;width: 25px;height: 25px;backgro
 .loader{position: fixed;width: 100%;height: 100%;left: 0;top: 0;background-color: rgba(0,0,0,.5);background-image: url('../img/loader.gif');background-position: center;background-repeat: no-repeat;display: none;z-index: 1000;}
 .loading .loader{display: block;}
 .nav>li.search-wrpr-h-mob{display: none;}
-.about-wrpr {min-height: 500px;height: auto;padding: 20px 15px;position: relative;width: 100%;background-image: url('../img/bg1.jpg');background-size: contain;background-color: #304bb2;background-repeat: no-repeat;background-size: cover;background-position: bottom left;}
+.about-wrpr {height: 100%;height: auto;padding: 0;position: relative;width: 100%;background-size: contain;height: 100%;}
+.about-wrpr .container{padding: 0;}
 .about-wrpr1{background-image:url('../img/bg1.jpg');}
 .about-wrpr2{background-image:url('../img/bg2.jpg');}
 .about-wrpr3{background-image:url('../img/bg3.jpg');}
@@ -468,3 +469,15 @@ div.facebook  a.pp_close {right: 10px;top: -9px;width: 25px;height: 25px;backgro
 
 .overlay-wrpr:hover .full-width-img {-webkit-transform: scale(1.15);-moz-transform: scale(1.15);-ms-transform: scale(1.15);-o-transform: scale(1.15);transform: scale(1.15);-webkit-transition: all 1.5s ease;-moz-transition: all 1.5s ease;-ms-transition: all 1.5s ease;-o-transition: all 1.5s ease;transition: all 1.5s ease;}
 .overlay-wrpr .full-width-img{-webkit-transform: scale(1);-moz-transform: scale(1);-ms-transform: scale(1);-o-transform: scale(1);transform: scale(1);-webkit-transition: all 1.5s ease;-moz-transition: all 1.5s ease;-ms-transition: all 1.5s ease;-o-transition: all 1.5s ease;transition: all 1.5s ease;}
+
+.about-wrpr .carousel,.about-wrpr .item,.about-wrpr .active{height:100%;}
+.about-wrpr .carousel-inner{height:100%;}
+.about-wrpr .fill{width:100%;height:100%;background-position:center;background-size:cover;}
+
+@media(max-width: 1023px){
+    .about-wrpr .carousel,.about-wrpr .item,.about-wrpr .active,.about-wrpr .carousel-inner,.about-wrpr .fill,.about-wrpr{height: auto;}
+    #about{min-height: 0;}
+    .about-wrpr .item img{height: 400px;display: block !important;max-width: auto !important;width: 100% !important;} 
+    .about-wrpr .fill{background-image: none !important;}
+    .about-wrpr .container{padding: 0;width: 100%;}
+}
