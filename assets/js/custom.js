@@ -90,19 +90,7 @@ $(document).ready(function(){
       	
 
   })
-/*$(document).ready(function(){
-	function run(interval, frames) {
-	    var int = 1;
-	    var bg="about-wrpr"; 
-	    function func() {
-	        bg="about-wrpr about-wrpr"+int;
-         	$('#about').attr('class',bg)
-	        int++;
-	        if(int === frames) { int = 1; }
-	    }
-	    var swap = window.setInterval(func, interval);
-	}
-	run(5000, 7);*/
+$(document).ready(function(){
 	$('#about-carousel').carousel({interval: 2000});
 	$('input[name="players"]').change(function(e){
 		e.preventDefault();
@@ -153,7 +141,7 @@ $(document).ready(function(){
 
 	    $('#myModal').modal('show');
 	});
-
+});
 $('#carousel-example-generic').bind('slid.bs.carousel', function (e) {
         $('#fbShareData').html('');
         $('#fbShareData').html('<a id="largeShare" href="http://garvhai.in" data-image="'+$('#carousel-example-generic').find('.active').find('img').attr('src')+'" data-title="'+$("#fbShareData").attr('data-name')+'" data-desc="'+$("#fbShareData").attr('data-description')+'" class="social-icon-top btnShare"><img src="'+baseUrl+'assets/img/fb-w.png"></a>');
