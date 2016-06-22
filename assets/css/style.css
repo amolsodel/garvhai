@@ -278,7 +278,7 @@ div.facebook  a.pp_close {right: 10px;top: -9px;width: 25px;height: 25px;backgro
 .about-wrpr5{background-image:url('../img/bg5.jpg');}
 .about-wrpr6{background-image:url('../img/bg6.jpg');}
 
-.about-inner{position: absolute;top: 50%;-webkit-transform: translateY(-50%);-moz-transform: translateY(-50%);-ms-transform: translateY(-50%);-o-transform: translateY(-50%);transform: translateY(-50%);max-width: 820px;width: 100%;margin: 0 auto;left: 0;right: 0;padding: 0 15px;}
+.about-inner{position: absolute;top: 50%;-webkit-transform: translateY(-50%);-moz-transform: translateY(-50%);-ms-transform: translateY(-50%);-o-transform: translateY(-50%);transform: translateY(-50%);max-width: 820px;width: 100%;margin: 0 auto;left: 0;right: 0;padding: 0 15px;z-index: 2;}
 .about-title {color: #f90;text-align: center;font-size: 30px;font-family: 'rubrikmedium';margin-bottom: 30px;}
 .about-discrb{color: #fff;font-family: 'rubrikregular';font-size: 14px;line-height: 1.8;}
 .about-discrb1{color: #fff;font-family: 'rubrikregular';font-size: 16px;line-height: 1.8;}
@@ -480,4 +480,34 @@ div.facebook  a.pp_close {right: 10px;top: -9px;width: 25px;height: 25px;backgro
     .about-wrpr .item img{height: 400px;display: block !important;max-width: auto !important;width: 100% !important;} 
     .about-wrpr .fill{background-image: none !important;}
     .about-wrpr .container{padding: 0;width: 100%;}
+}
+
+
+.carousel.carousel-fade {
+  opacity: 1;
+}
+.carousel.carousel-fade .item {
+  -moz-transition: opacity ease-in-out .7s;
+  -o-transition: opacity ease-in-out .7s;
+  -webkit-transition: opacity ease-in-out .7s;
+  transition: opacity ease-in-out .7s;
+  left: 0 !important;
+  opacity: 0;
+  top:0;
+  position:absolute;
+  width: 100%;
+  display:block !important;
+  z-index:1;
+}
+.carousel.carousel-fade .item:first-child {
+  top:auto;
+  position:relative;
+}
+.carousel.carousel-fade .item.active {
+  opacity: 1;
+  -moz-transition: opacity ease-in-out .7s;
+  -o-transition: opacity ease-in-out .7s;
+  -webkit-transition: opacity ease-in-out .7s;
+  transition: opacity ease-in-out .7s;
+  z-index:2;
 }
