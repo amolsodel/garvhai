@@ -26,7 +26,9 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="<?php echo base_url(); ?>assets/js/bootstrap.min.js"></script>
     <script src="<?php echo base_url(); ?>assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/js/custom.js?ver=0.7" type="text/javascript" charset="utf-8"></script>
+    <script src="<?php echo base_url(); ?>assets/js/jquery.scrollme.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/js/wow.js"></script>    
+    <script src="<?php echo base_url(); ?>assets/js/custom.js?ver=0.8" type="text/javascript" charset="utf-8"></script>
 
     <script type="text/javascript">
      

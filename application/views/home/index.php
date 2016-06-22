@@ -107,47 +107,56 @@
               $count=1;
               $lr="";
               $tb="";
+              $frm="";
               if(isset($records)){
                 foreach($records as $playerData) {
                    switch ($count) {
                     case '1':
                       $lr="25%";
-                      $tb="tl";                      
+                      $tb="tl";  
+                      $frm="0.2";                    
                       break;
                        case '2':
                         $lr="50%";
-                        $tb="tl";                      
+                        $tb="tl";   
+                        $frm="0.25";                   
                       break;
                        case '3':
                       $lr="0";
-                      $tb="tr";                      
+                      $tb="tr";
+                      $frm="0.3";                      
                       break;
                        case '4':
                       $lr="25%";
-                      $tb="tr";                      
+                      $tb="tr";
+                      $frm="0.35";                      
                       break;
                        case '5':
                       $lr="25%";
-                      $tb="bl";                      
+                      $tb="bl";
+                      $frm="0.4";                      
                       break;
                        case '6':
                       $lr="50%";
-                      $tb="bl";                      
+                      $tb="bl";
+                      $frm="0.45";                      
                       break;
-                       case '7':
+                       case '5':
                       $lr="0";
-                      $tb="br";                     
+                      $tb="br";
+                      $frm="0.55";                     
                       break;                    
                     default:
                      $lr="25%";
-                      $tb="br"; 
+                      $tb="br";
+                      $frm="0.6"; 
                       break;
                   }
                   ?> 
 
-                  <div class="col-xs-4 col-xs-20 overlay-wrpr">
+                  <div class="col-xs-4 col-xs-20 overlay-wrpr scrollme">
                     <!-- <div class="heros-name text-uppercase"><?php echo $playerData['name']; ?></div> -->
-                    <div class="row">
+                    <div class="row animateme" data-when="enter" data-from="<?php echo $frm?>" data-to="0" data-opacity="0" data-translatey="400">
                       <img src="<?php echo base_url(); ?>uploads/<?php echo $playerData['profile_photo']; ?>" class="full-width-img">
                     </div>
                     <div class="hover-overlays"></div>
@@ -414,7 +423,7 @@
     </section>
     <section id="about" class="about-wrpr">
       <div class="container fill">
-        <div id="about-carousel" class="carousel slide">
+        <div id="about-carousel" class="carousel  carousel-fade">
           <div class="carousel-inner">
             <div class="active item">
               <div class="fill" style="background-image:url('<?php echo base_url();?>assets/img/bg1.jpg');">
@@ -462,8 +471,8 @@
         </div>
       </div>
       <div class="about-inner">
-        <h2 class="about-title text-uppercase text-center">#GarvHai: The Adani Initiative</h2>
-        <p class="about-discrb text-center">"Sport has the power to build a better and a stronger nation. Through our humble initiative <span>#GarvHai</span> , we're privileged to support some of the best sporting talent in the country. Talented athletes were chosen from all parts of India and assisted to qualify for the Games much before the Olympics qualifiers began. These men and women have fought the odds and made great sacrifices, all for one vision - to bring glory to India. We need you to stand up and say 'Garv Hai'!<br/> Join us, and together, let's make history."</p>
+        <h2 class="about-title text-uppercase wow fadeInDown  text-center">#GarvHai: The Adani Initiative</h2>
+        <p class="about-discrb text-center wow fadeInUp">"Sport has the power to build a better and a stronger nation. Through our humble initiative <span>#GarvHai</span> , we're privileged to support some of the best sporting talent in the country. Talented athletes were chosen from all parts of India and assisted to qualify for the Games much before the Olympics qualifiers began. These men and women have fought the odds and made great sacrifices, all for one vision - to bring glory to India. We need you to stand up and say 'Garv Hai'!<br/> Join us, and together, let's make history."</p>
       </div>
     </section>
     <section id="contact" class="contact-wrpr">
