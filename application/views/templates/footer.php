@@ -27,14 +27,28 @@
     <script src="<?php echo base_url(); ?>assets/js/bootstrap.min.js"></script>
     <script src="<?php echo base_url(); ?>assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
     <script src="<?php echo base_url(); ?>assets/js/jquery.scrollme.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/js/wow.js"></script>    
-    <script src="<?php echo base_url(); ?>assets/js/custom.js?ver=0.8" type="text/javascript" charset="utf-8"></script>
+    <script src="<?php echo base_url(); ?>assets/js/wow.js"></script>
+    <script src="<?php echo base_url(); ?>assets/js/owl.carousel.min.js"></script>        
+    <script src="<?php echo base_url(); ?>assets/js/custom.js?ver=0.9" type="text/javascript" charset="utf-8"></script>
 
     <script type="text/javascript">
      
       var baseUrl = '<?php echo base_url() ?>';
 
       $(document).ready(function(){
+        $('.owl-carousel').owlCarousel({          
+           items:1,
+          loop:true,
+          margin:10,
+          autoplay:true,
+          autoplayTimeout:1000,
+          autoplayHoverPause:false,
+          animateOut: 'fadeOut',
+          animateIn: 'fadeIn',
+        });
+        //$('.owl-carousel').trigger('autoplay.play.owl',[1000])
+
+//setInterval(function(){ $('.owl-carousel').trigger('autoplay.play.owl',[1000]); }, 3000);
         $('.close-overlay').click(function(){
           $(this).parents('.overlay-wrpr').removeClass('active-mob-overlay');
           
