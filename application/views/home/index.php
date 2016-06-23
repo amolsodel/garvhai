@@ -423,9 +423,9 @@
     </section>
     <section id="about" class="about-wrpr">
       <div class="container fill">
-        <div id="about-carousel" class="carousel  carousel-fade">
-          <div class="carousel-inner">
-            <div class="active item">
+        <div id="about-carousel">
+          <div class="owl-carousel">
+            <div class="item">
               <div class="fill" style="background-image:url('<?php echo base_url();?>assets/img/bg1.jpg');">
                 <div class="container">
                   <img src="<?php echo base_url();?>assets/img/bg1.jpg" class="visible-xs full-width">
