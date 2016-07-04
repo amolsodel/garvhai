@@ -108,55 +108,63 @@
               $lr="";
               $tb="";
               $frm="";
+              $margin="";
               if(isset($records)){
                 foreach($records as $playerData) {
                    switch ($count) {
                     case '1':
                       $lr="25%";
                       $tb="tl";  
-                      $frm="0.2";                    
+                      $frm="0.6";
+                      $margin="400";
                       break;
                        case '2':
                         $lr="50%";
                         $tb="tl";   
-                        $frm="0.25";                   
+                        $frm="0.7"; 
+                        $margin="600";                  
                       break;
                        case '3':
                       $lr="0";
                       $tb="tr";
-                      $frm="0.3";                      
+                      $frm="0.4";
+                      $margin="300";                       
                       break;
                        case '4':
                       $lr="25%";
                       $tb="tr";
-                      $frm="0.35";                      
+                      $frm="0.6"; 
+                      $margin="550";                      
                       break;
                        case '5':
                       $lr="25%";
                       $tb="bl";
-                      $frm="0.4";                      
+                      $frm="0.5"; 
+                      $margin="800";                      
                       break;
                        case '6':
                       $lr="50%";
                       $tb="bl";
-                      $frm="0.45";                      
+                      $frm="0.2"; 
+                      $margin="1200";                      
                       break;
-                       case '5':
+                       case '7':
                       $lr="0";
                       $tb="br";
-                      $frm="0.55";                     
+                      $frm="0.9"; 
+                      $margin="800";                     
                       break;                    
                     default:
                      $lr="25%";
                       $tb="br";
-                      $frm="0.6"; 
+                      $frm="0.3"; 
+                      $margin="600"; 
                       break;
                   }
                   ?> 
-
                   <div class="col-xs-4 col-xs-20 overlay-wrpr scrollme">
                     <!-- <div class="heros-name text-uppercase"><?php echo $playerData['name']; ?></div> -->
-                    <div class="row animateme" data-when="enter" data-from="<?php echo $frm?>" data-to="0" data-opacity="0" data-translatey="400">
+                    <div class="row animateme" data-when="enter" data-from="<?php echo $frm?>" data-to="0" data-opacity="0" data-translatey="<?php echo $margin?>">
                       <img src="<?php echo base_url(); ?>uploads/<?php echo $playerData['profile_photo']; ?>" class="full-width-img">
                     </div>
                     <div class="hover-overlays"></div>
