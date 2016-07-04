@@ -41,7 +41,7 @@
           loop:true,
           margin:10,
           autoplay:true,
-          autoplayTimeout:1000,
+          autoplayTimeout:4000,
           autoplayHoverPause:false,
           animateOut: 'fadeOut',
           animateIn: 'fadeIn',
