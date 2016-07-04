@@ -470,13 +470,23 @@ div.facebook  a.pp_close {right: 10px;top: -9px;width: 25px;height: 25px;backgro
 .overlay-wrpr:hover .full-width-img {-webkit-transform: scale(1.15);-moz-transform: scale(1.15);-ms-transform: scale(1.15);-o-transform: scale(1.15);transform: scale(1.15);-webkit-transition: all 1.5s ease;-moz-transition: all 1.5s ease;-ms-transition: all 1.5s ease;-o-transition: all 1.5s ease;transition: all 1.5s ease;}
 .overlay-wrpr .full-width-img{-webkit-transform: scale(1);-moz-transform: scale(1);-ms-transform: scale(1);-o-transform: scale(1);transform: scale(1);-webkit-transition: all 1.5s ease;-moz-transition: all 1.5s ease;-ms-transition: all 1.5s ease;-o-transition: all 1.5s ease;transition: all 1.5s ease;}
 
-.about-wrpr .carousel,.about-wrpr .item,.about-wrpr .active,#about-carousel,.owl-carousel,.owl-stage-outer,.owl-stage{height:100%;}
+.about-wrpr .custom-carousel,.about-wrpr .item,.about-wrpr .active,#about-carousel,.owl-carousel,.owl-stage-outer,.owl-stage{height:100%;}
 .about-wrpr .fill{width:100%;height:100%;background-position:center;background-size:cover;}
 
 .about-wrpr{background-image:url('../img/bg-patch.png');}
+.custom-carousel {  
+    position: relative; 
+}
+
+.custom-carousel > div { 
+    position: absolute; 
+    top: 0px; 
+    left: 0px; 
+    width: 100%;
+}
 @media(max-width: 1023px){
     .about-wrpr .carousel,.about-wrpr .item,.about-wrpr .active,.about-wrpr .carousel-inner,.about-wrpr .fill,.about-wrpr{height: auto;}
-    #about{min-height: 0;}
+    #about{min-height: 400px;}
     .about-wrpr .item img{height: 400px;display: block !important;max-width: auto !important;width: 100% !important;} 
     .about-wrpr .fill{background-image: none !important;}
     .about-wrpr .container{padding: 0;width: 100%;}
