@@ -6,7 +6,7 @@
 			    echo '</pre>';*/
 			    $news = $player_social['social'];
 			?>
-	<a class="btn btn-sm btn-primary center-block" style="width:25%;" href="http://garvhai.in/index.php/admin/add_social/<?php echo $player_id;?>">Add News</a>
+	<a class="btn btn-sm btn-primary center-block" style="width:25%;" href="http://www.garvhai.in/index.php/admin/add_social/<?php echo $player_id;?>">Add News</a>
 	<hr/>
 	<?php
 		if(empty($news)){
@@ -34,7 +34,7 @@
 								<td><?php echo $news_item['link']; ?></td>
 								<td><?php echo $news_item['published_date']; ?></td>
 								<td><?php echo $news_item['description']; ?></td>
-								<td><a href="http://garvhai.in/index.php/admin/delete_media/<?php echo $news_item['id'];?>">Delete</a></td>
+								<td><a href="http://www.garvhai.in/index.php/admin/delete_media/<?php echo $news_item['id'];?>">Delete</a></td>
 							</tr>
 						</tbody>
 					<?php endforeach; ?>

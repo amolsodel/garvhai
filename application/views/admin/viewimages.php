@@ -12,7 +12,7 @@
 			    $images = $player_images['images'];
 
         	?>
-			<a class="btn btn-sm btn-primary center-block" style="width:25%;" href="http://garvhai.in/index.php/admin/add_images/<?php echo $player_id;?>">Add Images</a>
+			<a class="btn btn-sm btn-primary center-block" style="width:25%;" href="http://www.garvhai.in/index.php/admin/add_images/<?php echo $player_id;?>">Add Images</a>
 			<hr/>
 			<?php
 				if(empty($images)){
@@ -22,9 +22,9 @@
 			    	foreach($images as $image){
 			?>
 				    	<div style="float:left; border: 1px solid #ddd; border-radius: 4px; margin: 0px 5px 5px 0px;">
-				    		<img width='200' height='200' src="http://garvhai.in/uploads/<?php echo $image['media_value']?>" />
+				    		<img width='200' height='200' src="http://www.garvhai.in/uploads/<?php echo $image['media_value']?>" />
 				    		<br/><br/>
-				    		<a class="btn btn-sm btn-primary center-block" style="width:35%;" href="http://garvhai.in/index.php/admin/delete_media/<?php echo $image['id'];?>">Delete</a>
+				    		<a class="btn btn-sm btn-primary center-block" style="width:35%;" href="http://www.garvhai.in/index.php/admin/delete_media/<?php echo $image['id'];?>">Delete</a>
 				    		<br/>
 				    	</div>
 			<?php

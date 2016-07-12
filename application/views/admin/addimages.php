@@ -26,6 +26,6 @@
 	<?php
 		if(isset($player_id)){
 	?>
-			<a class="btn btn-sm btn-primary center-block" style="width:25%;" href="http://garvhai.in/index.php/admin/view_images/<?php echo $player_id;?>">View Images</a>
+			<a class="btn btn-sm btn-primary center-block" style="width:25%;" href="http://www.garvhai.in/index.php/admin/view_images/<?php echo $player_id;?>">View Images</a>
 	<?php } ?>
 </div>
