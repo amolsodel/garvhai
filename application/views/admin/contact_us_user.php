@@ -1,6 +1,6 @@
 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 	<h2 class="sub-header">Contact Us User</h2>
-	<a class="btn btn-sm btn-primary center-block" style="width:13%;float:right;" href="http://garvhai.in/index.php/export/export_data">Export Data</a>
+	<a class="btn btn-sm btn-primary center-block" style="width:13%;float:right;" href="http://www.garvhai.in/index.php/export/export_data">Export Data</a>
 	<hr/>
 	<?php
 		if(empty($contact_us_users)){
@@ -27,7 +27,7 @@
 								<td><?php echo trim($contact_us_user['email'],"'"); ?></td>
 								<td><?php echo trim($contact_us_user['mobile'],"'"); ?></td>
 								<td><?php echo trim($contact_us_user['comment'],"'"); ?></td>
-								<td><a href="http://garvhai.in/index.php/admin/delete_user/<?php echo $contact_us_user['id'];?>">Delete</a></td>
+								<td><a href="http://www.garvhai.in/index.php/admin/delete_user/<?php echo $contact_us_user['id'];?>">Delete</a></td>
 							</tr>
 						</tbody>
 					<?php endforeach; ?>

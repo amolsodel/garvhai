@@ -17,13 +17,13 @@
 						<tr>
 							<td><?php echo $player['id']; ?></td>
 							<td><?php echo $player['name']; ?></td>
-							<td><a href="http://garvhai.in/index.php/admin/edit_player/<?php echo $player['id'];?>">Edit</a></td>
+							<td><a href="http://www.garvhai.in/index.php/admin/edit_player/<?php echo $player['id'];?>">Edit</a></td>
 							<td>
-								<a href="http://garvhai.in/index.php/admin/view_images/<?php echo $player['id'];?>">Images</a>&nbsp;&nbsp;&nbsp;| &nbsp;&nbsp;&nbsp; 
-								<a href="http://garvhai.in/index.php/admin/view_videos/<?php echo $player['id'];?>">Video</a>&nbsp;&nbsp;&nbsp;| &nbsp;&nbsp;&nbsp;
-								<a href="http://garvhai.in/index.php/admin/view_social/<?php echo $player['id'];?>">News</a>
+								<a href="http://www.garvhai.in/index.php/admin/view_images/<?php echo $player['id'];?>">Images</a>&nbsp;&nbsp;&nbsp;| &nbsp;&nbsp;&nbsp; 
+								<a href="http://www.garvhai.in/index.php/admin/view_videos/<?php echo $player['id'];?>">Video</a>&nbsp;&nbsp;&nbsp;| &nbsp;&nbsp;&nbsp;
+								<a href="http://www.garvhai.in/index.php/admin/view_social/<?php echo $player['id'];?>">News</a>
 							</td>
-							<td><a href="http://garvhai.in/index.php/admin/delete_player/<?php echo $player['id'];?>">Delete</a></td>
+							<td><a href="http://www.garvhai.in/index.php/admin/delete_player/<?php echo $player['id'];?>">Delete</a></td>
 						</tr>
 					</tbody>
 				<?php endforeach; ?>

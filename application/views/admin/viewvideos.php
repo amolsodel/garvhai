@@ -6,7 +6,7 @@
 			    echo '</pre>';*/
 			    $videos = $player_videos['videos'];
 			?>
-	<a class="btn btn-sm btn-primary center-block" style="width:25%;" href="http://garvhai.in/index.php/admin/add_video/<?php echo $player_id;?>">Add Video</a>
+	<a class="btn btn-sm btn-primary center-block" style="width:25%;" href="http://www.garvhai.in/index.php/admin/add_video/<?php echo $player_id;?>">Add Video</a>
 	<hr/>
 	<?php
 		if(empty($videos)){
@@ -29,10 +29,10 @@
 						<tbody>
 							<tr>
 								<td><?php echo $video['id']; ?></td>
-								<td><img width='200' height='200' src="http://garvhai.in/uploads/<?php echo $video['video_thumbnail']?>" /></td>
+								<td><img width='200' height='200' src="http://www.garvhai.in/uploads/<?php echo $video['video_thumbnail']?>" /></td>
 								<td><?php echo $video['video_title']; ?></td>
 								<td><?php echo $video['media_value']; ?></td>
-								<td><a href="http://garvhai.in/index.php/admin/delete_media/<?php echo $video['id'];?>">Delete</a></td>
+								<td><a href="http://www.garvhai.in/index.php/admin/delete_media/<?php echo $video['id'];?>">Delete</a></td>
 							</tr>
 						</tbody>
 					<?php endforeach; ?>

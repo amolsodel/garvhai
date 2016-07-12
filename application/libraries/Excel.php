@@ -46,8 +46,8 @@ class Excel {
         header("Cache-control: private");
         $objWriter = PHPExcel_IOFactory::createWriter($this->excel, 'Excel5');
         $objWriter->save("export/$filename");
-        header("location: http://garvhai.in/export/".$filename);
-        unlink("http://garvhai.in/export/".$filename);
+        header("location: http://www.garvhai.in/export/".$filename);
+        unlink("http://www.garvhai.in/export/".$filename);
     }
 
     public function __call($name, $arguments) {
