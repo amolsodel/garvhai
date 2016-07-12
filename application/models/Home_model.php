@@ -13,7 +13,7 @@ class Home_model extends CI_Model {
 	}
     public function get_player_video()
     {
-        $query = $this->db->query('SELECT gm.*,gp.name,gp.profile_photo,gp.olympic_qulified FROM garvhai_players_media gm INNER JOIN garvhai_players gp ON gp.id = gm.player_id WHERE gm.player_id = 8 AND gm.type <> "social" ORDER BY gm.id DESC LIMIT 8');
+        $query = $this->db->query('SELECT gm.*,gp.name,gp.profile_photo,gp.olympic_qulified FROM garvhai_players_media gm INNER JOIN garvhai_players gp ON gp.id = gm.player_id WHERE gm.player_id = 4 AND gm.type <> "social" ORDER BY gm.id DESC LIMIT 8');
         return $query->result_array();
     }
     
