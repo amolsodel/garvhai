@@ -28,7 +28,7 @@
     <script src="<?php echo base_url(); ?>assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
     <script src="<?php echo base_url(); ?>assets/js/jquery.scrollme.min.js"></script>
     <script src="<?php echo base_url(); ?>assets/js/wow.js"></script>
-    <script src="<?php echo base_url(); ?>assets/js/custom.js?ver=0.9" type="text/javascript" charset="utf-8"></script>
+    <script src="<?php echo base_url(); ?>assets/js/custom.js?ver=0.10" type="text/javascript" charset="utf-8"></script>
 
     <script type="text/javascript">
      
@@ -363,7 +363,7 @@
 
     <div id="fb-root"></div>
     <script>
-    window.fbAsyncInit = function(){
+    window.fbAsyncInit = function(){ //1438336106420660
       FB.init({
           appId: '197178750676127', status: true, cookie: true, xfbml: true }); 
       };

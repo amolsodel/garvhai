@@ -411,12 +411,12 @@
                         ?>
                           <a>
                             <img src="<?php echo base_url(); ?>uploads/<?php echo $videoData['media_value'].'?'.strtotime($videoData['timestamp']); ?>" class="full-width-img">
-                            <div class="light-box-overlay image-overlay" data-id="<?php echo $videoData['id']; ?>" data-image="<?php echo base_url(); ?>uploads/<?php echo $largeImg[0].'-l.jpg'.'?'.strtotime($videoData['timestamp']); ?>" data-qualified="<?php echo $videoData['olympic_qulified']; ?>" data-title="<?php echo $videoData['name']; ?>" data-desc="<?php echo $fbDesc; ?>"></div>
+                            <div class="light-box-overlay image-overlay" data-href="http://www.garvhai.in/" data-id="<?php echo $videoData['id']; ?>" data-image="<?php echo base_url(); ?>uploads/<?php echo $largeImg[0].'-l.jpg'.'?'.strtotime($videoData['timestamp']); ?>" data-qualified="<?php echo $videoData['olympic_qulified']; ?>" data-title="<?php echo $videoData['name']; ?>" data-desc="<?php echo $fbDesc; ?>"></div>
                           </a>   
                         <?php }else if($videoData['type'] == 'video') { ?>
                             <a href="#">
                               <img src="<?php echo base_url(); ?>uploads/<?php echo $videoData['video_thumbnail'].'?'.strtotime($videoData['timestamp']); ?>" class="full-width-img">
-                              <div class="light-box-overlay video-overlay" data-id="<?php echo $videoData['id']; ?>" data-image="<?php echo base_url(); ?>uploads/<?php echo $videoData['video_thumbnail'].'?'.strtotime($videoData['timestamp']);?>" data-title="<?php echo $videoData['name']; ?>" data-desc="<?php echo $fbDesc; ?>"></div>
+                              <div class="light-box-overlay video-overlay" data-id="<?php echo $videoData['id']; ?>" data-href="<?php echo $videoData['media_value']; ?>" data-image="<?php echo base_url(); ?>uploads/<?php echo $videoData['video_thumbnail'].'?'.strtotime($videoData['timestamp']);?>" data-qualified="<?php echo $videoData['olympic_qulified']; ?>" data-title="<?php echo $videoData['name']; ?>" data-desc="<?php echo $fbDesc; ?>"></div>
                             </a>
                         <?php } ?>               
                       </div>                
@@ -643,9 +643,9 @@
                           <img src="<?php echo base_url(); ?>uploads/<?php echo $imgnm[0].'-l.jpg?'.strtotime($videoData['timestamp']); ?>" class="full-width-img">
                         </div>
                        <?php }else if($videoData['type'] == 'video') { ?>
-                          <div class="item" id="modalImg_<?php echo $videoData['id']; ?>" >
+                          <div class="item video-media" id="modalImg_<?php echo $videoData['id']; ?>" >
                             <div class="embed-responsive embed-responsive-16by9">
-                               <iframe class="embed-responsive-item" src="<?php echo $videoData['media_value']; ?>" frameborder="0" allowfullscreen></iframe>
+                               <iframe class="embed-responsive-item" src="<?php echo $videoData['media_value']; ?>" thumbimg="<?php echo base_url(); ?>uploads/<?php echo $videoData['video_thumbnail'].'?'.strtotime($videoData['timestamp']);?>" frameborder="0" allowfullscreen></iframe>
                             </div>
                           </div>
                        <?php } 
@@ -666,7 +666,7 @@
       <div class="modal-footer">
         <div class="heros-social-links">
         <ul class="list-inline">
-          <li id="fbShareData" data-name="" data-description=""><a id="largeShare" href="http://garvhai.in" data-image="" data-title="" data-desc="" class="social-icon-top btnShare"><img src="<?php echo base_url(); ?>assets/img/fb-w.png"></a></li>
+          <li id="fbShareData" data-name="" data-description=""><a id="largeShare" data-href="" data-image="" data-title="" data-desc="" class="social-icon-top btnShare"><img src="<?php echo base_url(); ?>assets/img/fb-w.png"></a></li>
           <li><a id="largeTWShare" href="" class="social-icon-top tw-user-profile" data-qualified="" data-username=""><img src="<?php echo base_url(); ?>assets/img/tw-w.png"></a></li>
         </ul>
       </div>
