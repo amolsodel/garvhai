@@ -5,6 +5,13 @@ class Home_model extends CI_Model {
     {
             $this->load->database();
     }
+    
+    public function get_player_id($player_name = '')
+    {
+        $query = $this->db->query("SELECT id FROM garvhai_players where name LIKE '%$player_name%'");
+        //echo $this->db->last_query(); exit();
+        return $query->row_array();
+    }
 
     public function get_player_data()
 	{

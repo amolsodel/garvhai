@@ -14,6 +14,17 @@
         {
             $data['title'] = 'Home';
 
+            $player_url = $_SERVER['REQUEST_URI'];
+            $player_url = explode('/', $player_url); 
+            $player_url = array_filter($player_url);
+            $player_url = array_merge($player_url, array()); 
+            $player_url = preg_replace('/\?.*/', '', $player_url);
+            $endofurl = isset($player_url[0]) ? $player_url[0] : "";
+            if($endofurl != ''){
+                $endofurl = explode('-', $endofurl);
+                $data['playerNameID'] =  $this->home_model->get_player_id($endofurl[0]);
+            }
+
             $data['records'] = $this->home_model->get_player_data();
             $data['videoRecords'] = $this->home_model->get_player_video();
             $data['mediaRecords'] = $this->home_model->get_player_modal_data('allmedia');

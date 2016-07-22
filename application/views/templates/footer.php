@@ -33,10 +33,10 @@
     <script type="text/javascript">
      
       var baseUrl = '<?php echo base_url() ?>';
-
+      var profileUrlID = '<?php echo isset($playerNameID["id"]) ?  $playerNameID["id"] : ""; ?>';
       $(document).ready(function(){
         $(".custom-carousel > div:gt(0)").hide();
-
+         
         setInterval(function() { 
           $('.custom-carousel > div:first')
             .fadeOut(1000)
@@ -110,7 +110,6 @@
     				      reomoveItem();
     				      $('.hero-detail-info').addClass('left').addClass('bottom');
     				    }  
-               
             }
             
             if(playerMode != 'videos'){
@@ -136,10 +135,46 @@
             }
 
           }
-          function reomoveItem(){
-            return $('.hero-detail-info').removeClass('right').removeClass('top').removeClass('bottom').removeClass('left');
-          }
         });
+        function reomoveItem(){
+          return $('.hero-detail-info').removeClass('right').removeClass('top').removeClass('bottom').removeClass('left');
+        }
+
+        if(profileUrlID){          
+          if($("div#playerUrl_"+profileUrlID)){
+            $('body').addClass('loading');
+            var lr = $("#playerUrl_"+profileUrlID).data('lr');
+            var lb = $("#playerUrl_"+profileUrlID).data('tb');
+            $('.media-btn-mob').data('profileid',profileUrlID);
+            $('.hero-detail-info').removeClass('hidden').css({'left':lr})
+              if($(window).width()>1006){
+                  switch(lb){
+                    case "tr" :    
+                    reomoveItem();        
+                    $('.hero-detail-info').addClass('right').addClass('top');
+                    break;
+                    case "tl" :   
+                    reomoveItem();         
+                    $('.hero-detail-info').addClass('left').addClass('top');
+                    break;
+                    case 'br':    
+                    reomoveItem();        
+                    $('.hero-detail-info').addClass('right').addClass('bottom');
+                    break;
+                    default :
+                    reomoveItem();
+                    $('.hero-detail-info').addClass('left').addClass('bottom');
+                  }  
+              }
+              $("#playerUrl_"+profileUrlID).parents('.overlay-wrpr').removeClass('active-mob-overlay');
+              $("#playerUrl_"+profileUrlID).parents('.heros-list').find('.hover-overlays').show();
+              $("#playerUrl_"+profileUrlID).parents('.overlay-wrpr').addClass('active-img').find('.hover-overlays').hide();
+              $("body, html").animate({
+                    scrollTop: $("#hero-wrpr").offset().top
+                }, 600);
+              showModalContent(profileUrlID,'profile','mediaListWrpr');
+          }
+        }
 
         $('.hover-overlays').hover(function(e){
           e.stopPropagation();
@@ -277,8 +312,6 @@
           }
           
         }); 
-        
-
       });
 
       function validateEmail(email) {
