@@ -1,28 +1,88 @@
    <?php require_once('Mobile_Detect.php');
     $detect = new Mobile_Detect;   ?>
+    <div style="display:none;">
+    <img src="<?php echo base_url(); ?>assets/img/bg1.jpg">
+    <img src="<?php echo base_url(); ?>assets/img/bg2.jpg">
+    <img src="<?php echo base_url(); ?>assets/img/bg3.jpg">
+    <img src="<?php echo base_url(); ?>assets/img/bg4.jpg">
+    <img src="<?php echo base_url(); ?>assets/img/bg5.jpg">
+    <img src="<?php echo base_url(); ?>assets/img/bg6.jpg">
+  </div>
    <section id="video-wrpr" class="clearfix">
     <section class="video-wrpr">
-    <?php if( !$detect->isMobile()){ ?>
+    <?php //if( !$detect->isMobile()){ ?>
       <div class="embed-responsive embed-responsive-16by9 video-resize">
-        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/B8dOuqyVGew?autoplay=1&loop=1&playlist=GRonxog5mbw" frameborder="0" allowfullscreen></iframe>
-      </div>
-      <?php }else { ?>
+        <iframe id="youtube_player" class="embed-responsive-item" src="https://www.youtube.com/embed/0Oxq8aLElEk?autoplay=1&loop=1&playlist=0Oxq8aLElEk&modestbranding=1&autohide=1&showinfo=0&controls=0&enablejsapi=1&version=3&playerapiid=ytplayer" frameborder="0" allowfullscreen></iframe>
+       </div>
+      <?php /*}else { ?>
         <img src="<?php echo base_url(); ?>assets/img/inderjeet-mob-banner.jpg" class="img-responsive mob-inderjeet-img">
-        <?php } ?>
+        <?php }*/ ?>
       <div class="top-video-info">
         <div>
-          <h2 class="top-video-title text-upppercase">the unsung heroes</h2>
+          <h2 class="top-video-title text-upppercase">Two Words Will Make All The Difference</h2>
           <div class="top-video-discrp">
-            They practise their sport, day in and day out, without complain, without expectation <br class="hidden-small" />for a country that doesn’t even know they exist. Now, it’s time to show them we <br class="hidden-small"/>care. It’s time to make our voices heard. It’s time to say <span>#Garvhai</span>
+            To inspire our athletes. To bring them closer to Olympic glory. To stand by them. <br class="hidden-small" />All we have to do is utter these two words: <span>#Garvhai</span>
           </div>          
         </div>
       </div>
-       <?php if( $detect->isMobile()){ ?>      
+       <?php /*if( $detect->isMobile()){ ?>      
       <div class="vedio-title-wrpr">
         <div class="vedio-hero-title text-uppercase">Inderjeet Singh</div>
         <div class="vedio-hero-desig">Shot putter</div>
       </div>
-      <?php } ?>
+      <?php }*/ ?>
+        
+      <div class="video-play-mute">  
+      <?php if( !$detect->isMobile()) { ?>        
+          <a id="pause" href="#" class="active pause-video-img">&nbsp;</a>
+      <?php }else{ ?>
+          <a id="play" href="#" class="active play-video-img">&nbsp;</a>
+       <?php  } ?>
+          <a id="mutedd" href="#" class="active1 mute-video-img">&nbsp;</a>
+          <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+          <script>
+          $('#pause').on('click', function() {
+                  var $this = $(this);
+                  $this.toggleClass('active');
+                  if($this.hasClass('active')){
+                      $this.removeClass('play-video-img');
+                      $this.addClass('pause-video-img');
+                      $('#youtube_player')[0].contentWindow.postMessage('{"event":"command","func":"' + 'playVideo' + '","args":""}', '*');        
+                  } else {
+                      $this.removeClass('pause-video-img');
+                      $this.addClass('play-video-img');
+                      $('#youtube_player')[0].contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*'); 
+                  }
+          });
+          $('#mutedd').on('click', function() {
+                  var $this = $(this);
+                  $this.toggleClass('active1');
+                  if($this.hasClass('active1')){
+                      $this.removeClass('unmute-video-img');
+                      $this.addClass('mute-video-img');
+                      $('#youtube_player')[0].contentWindow.postMessage('{"event":"command","func":"' + 'unMute' + '","args":""}', '*');
+                  } else {
+                      $this.removeClass('mute-video-img');
+                      $this.addClass('unmute-video-img');
+                      $('#youtube_player')[0].contentWindow.postMessage('{"event":"command","func":"' + 'mute' + '","args":""}', '*');
+                  }
+          });
+          $('#play').on('click', function() {
+                  var $this = $(this);
+                  $this.toggleClass('active');
+                  if($this.hasClass('active')){
+                      $this.removeClass('pause-video-img');
+                      $this.addClass('play-video-img');
+                      $('#youtube_player')[0].contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');        
+                  } else {                      
+                      $this.removeClass('play-video-img');
+                      $this.addClass('pause-video-img');
+                      $('#youtube_player')[0].contentWindow.postMessage('{"event":"command","func":"' + 'playVideo' + '","args":""}', '*');
+                  }
+          });
+          </script>
+      </div>
+      <?php //} ?>
       <div class="js--jumper" data-href="#hero-wrpr"><img src="<?php echo base_url(); ?>assets/img/scroll-down.png"></div>
     </section>
     </section>
@@ -32,7 +92,8 @@
           <div class="col-xs-12">
             <div class="row">
               <div class="know-txt">
-                Know more about the men and women striving to make India proud.
+                It’s only when you know our athletes well is when you’ll truly feel proud of them.<br/>
+                Get to know our heroes, right here.
               </div>
             </div>
           </div>
@@ -46,47 +107,64 @@
               $count=1;
               $lr="";
               $tb="";
+              $frm="";
+              $margin="";
               if(isset($records)){
                 foreach($records as $playerData) {
                    switch ($count) {
                     case '1':
                       $lr="25%";
-                      $tb="tl";                      
+                      $tb="tl";  
+                      $frm="0.6";
+                      $margin="400";
                       break;
                        case '2':
                         $lr="50%";
-                        $tb="tl";                      
+                        $tb="tl";   
+                        $frm="0.7"; 
+                        $margin="600";                  
                       break;
                        case '3':
                       $lr="0";
-                      $tb="tr";                      
+                      $tb="tr";
+                      $frm="0.4";
+                      $margin="300";                       
                       break;
                        case '4':
                       $lr="25%";
-                      $tb="tr";                      
+                      $tb="tr";
+                      $frm="0.6"; 
+                      $margin="550";                      
                       break;
                        case '5':
                       $lr="25%";
-                      $tb="bl";                      
+                      $tb="bl";
+                      $frm="0.5"; 
+                      $margin="800";                      
                       break;
                        case '6':
                       $lr="50%";
-                      $tb="bl";                      
+                      $tb="bl";
+                      $frm="0.2"; 
+                      $margin="1200";                      
                       break;
                        case '7':
                       $lr="0";
-                      $tb="br";                     
+                      $tb="br";
+                      $frm="0.9"; 
+                      $margin="800";                     
                       break;                    
                     default:
                      $lr="25%";
-                      $tb="br"; 
+                      $tb="br";
+                      $frm="0.3"; 
+                      $margin="600"; 
                       break;
                   }
                   ?> 
-
-                  <div class="col-xs-4 col-xs-20 overlay-wrpr">
+                  <div class="col-xs-4 col-xs-20 overlay-wrpr scrollme">
                     <!-- <div class="heros-name text-uppercase"><?php echo $playerData['name']; ?></div> -->
-                    <div class="row">
+                    <div class="row animateme" data-when="enter" data-from="<?php echo $frm?>" data-to="0" data-opacity="0" data-translatey="<?php echo $margin?>">
                       <img src="<?php echo base_url(); ?>uploads/<?php echo $playerData['profile_photo']; ?>" class="full-width-img">
                     </div>
                     <div class="hover-overlays"></div>
@@ -100,8 +178,17 @@
                       <div class="heros-social-links">
                         <ul class="list-inline">
                           <li class="fb-list">
-                           <a href="<?php echo base_url(); ?>" data-image="<?php echo base_url(); ?>uploads/<?php echo $playerData['profile_photo']; ?>" data-title="<?php echo $playerData['name'];?>" data-desc="Proud to support <?php echo $playerData['name'];?> in the Rio Olympics 2016. #GarvHai" class="btnShare"><img src="<?php echo base_url(); ?>assets/img/fb-w.png"></a></li>
-                          <li><a onClick="window.open('https://twitter.com/share?url='+escape(window.location.href)+'&text=\'Proud to support <?php echo $playerData['name'] ?> in the Rio Olympics 2016. \' via @GarvHai', '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');" href="javascript: void(0)" class="social-icon-top"><img src="<?php echo base_url(); ?>assets/img/tw-w.png"></a></li>
+                          <?php if($playerData['olympic_qulified'] == '1') {
+                              $fbDesc = 'Proud to support '.$playerData["name"].' in the Rio Olympics 2016. #GarvHai by #Adani';
+                              $twDesc = 'Proud to support '.$playerData["name"].' in the Rio Olympics 2016.';
+                            }else{
+                                $fbDesc = 'Proud to support '.$playerData["name"].'. #GarvHai by #Adani';
+                                $twDesc = 'Proud to support '.$playerData["name"].'.';
+                              } 
+                             
+                              ?>
+                           <a href="/" data-image="<?php echo base_url(); ?>uploads/<?php echo $playerData['profile_photo']; ?>" data-title="<?php echo $playerData['name'];?>" data-desc="<?php echo $fbDesc;?>" class="btnShare"><img src="<?php echo base_url(); ?>assets/img/fb-w.png"></a></li>
+                          <li><a onClick="window.open('https://twitter.com/share?url='+escape(window.location.href)+'&text=<?php echo $twDesc; ?>via @AdaniOnline&hashtags=GarvHai', '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');" href="javascript: void(0)" class="social-icon-top"><img src="<?php echo base_url(); ?>assets/img/tw-w.png"></a></li>
                         </ul>
                       </div>
                     </div>
@@ -111,10 +198,13 @@
                }
               } ?>
               <div class="col-xs-40 col-xs-4 hero-detail-info hidden">
+                <div class="close-prof">
+                  <img src="<?php echo base_url(); ?>assets/img/close-icon-white.png">
+                </div>
                 <div class="hero-detail-inner hero-detail-inner-profile hidden">
                   <div class="hero-detail-top">
                     <div class="hero-detail-top-in">
-                      <div class="hero-achive-wrpr">
+                      <!-- <div class="hero-achive-wrpr">
                         <div class="hero-achive-con">
                           <div class="hero-achive-name text-uppercase">INDERJEET SINGH</div>
                           <div class="hero-achive-event">(Shot Put)</div>
@@ -128,7 +218,7 @@
                         <div class="hero-achive-time">
                           22.1
                         </div>
-                      </div>
+                      </div> -->
                       <div class="hero-detail-social-icon text-center">
                         <div id="hero-support-name">Support Inderjeet</div>
                         <ul class="list-inline">
@@ -213,7 +303,7 @@
                 <div class="row">
                   <div class="hero-filter clearfix">
                     <div class="col-xs-12">
-                      <div class="filter-title">Catch the athletes in action</div>
+                      <div class="filter-title">Catch our mighty Athletes in action and share it with the world.</div>
                       <div class="custom-label-vid text-uppercase">
                         videos &amp; images
                       </div>
@@ -223,7 +313,7 @@
                             if(isset($records)){
                               foreach($records as $playerData) { 
                                 $optionSelected = '';
-                                if($playerData['id'] == '1'){ $optionSelected = 'selected="selected"'; }
+                                if($playerData['id'] == '4'){ $optionSelected = 'selected="selected"'; }
                                 ?>
                                 <option <?php echo $optionSelected; ?> value="<?php echo $playerData['id'];?>"><?php echo $playerData['name'];?></option>
                                 <?php }
@@ -241,7 +331,12 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-xs-12">
-            <div class="row">              
+            <div class="row">
+              <?php if( !$detect->isMobile()) { ?>
+              <div class="know-txt">
+                Catch our mighty Athletes in action and share it with the world.
+              </div>
+              <?php } ?>
               <div class="col-xs-4 col-xs-40 light-box-wrpr-fliter">
                 <div>
                   <div class="col-xs-12">
@@ -252,11 +347,11 @@
                         <?php 
                         if(isset($records)){
                           $count = 0;
-                          $loopCount = 1;
+                          //$loopCount = 1;
                           foreach($records as $playerData) { 
                             if($count == 0){
                               echo '<div class="col-sm-6 col-xs-12 hidden-small">
-                                      <ul class="cust-inp-wrpr">';
+                                      <ul class="cust-inp-wrpr gallery-player">';
                             }
                             $radioChecked = '';
                             $count=$count+1;
@@ -271,14 +366,14 @@
                           <?php 
                               if($count == 4){
                                 echo '</ul>';
-                                  if($loopCount == 1){
+                                  /*if($loopCount == 1){
                                     echo '<div class="btn filter-btn text-uppercase btn-default">
-                                      Videos &amp; IMAGES
+                                      Videos &amp; Images
                                     </div>';
-                                  }
+                                  }*/
                                   echo '</div>';
                                 $count = 0;
-                                $loopCount = $loopCount+1;
+                                //$loopCount = $loopCount+1;
                               }
                             }
                           } ?>
@@ -301,20 +396,30 @@
               <div class="replace-filter-data">
                 <?php 
                 if(isset($videoRecords)){
-                  foreach($videoRecords as $videoData) { ?> 
+                  foreach($videoRecords as $videoData) { 
+                    $fbDesc = '';
+                    ?> 
                     <div class="col-xs-4 col-xs-20 light-box-wrpr">
                       <div class="row">
-                      <?php if($videoData['type'] == 'image') { 
+                      <?php 
+                      if($videoData['olympic_qulified'] == '1') {
+
+                          $fbDesc .= 'Proud to support '.$videoData["name"].' in the Rio Olympics 2016. #GarvHai by #Adani';
+                        }else{
+                          $fbDesc .= 'Proud to support '.$videoData["name"].'. #GarvHai by #Adani';
+                        } 
+
+                      if($videoData['type'] == 'image') { 
                             $largeImg = explode('.', $videoData['media_value']);
                         ?>
                           <a>
-                            <img src="<?php echo base_url(); ?>uploads/<?php echo $videoData['media_value']; ?>" class="full-width-img">
-                            <div class="light-box-overlay image-overlay" data-id="<?php echo $videoData['id']; ?>" data-image="<?php echo base_url(); ?>uploads/<?php echo $largeImg[0].'-l.jpg'; ?>" data-title="<?php echo $videoData['name']; ?>" data-desc="Proud to support <?php echo $videoData['name']; ?> in the Rio Olympics 2016. #GarvHai"></div>
+                            <img src="<?php echo base_url(); ?>uploads/<?php echo $videoData['media_value'].'?'.strtotime($videoData['timestamp']); ?>" class="full-width-img">
+                            <div class="light-box-overlay image-overlay" data-href="http://www.garvhai.in/" data-id="<?php echo $videoData['id']; ?>" data-image="<?php echo base_url(); ?>uploads/<?php echo $largeImg[0].'-l.jpg'.'?'.strtotime($videoData['timestamp']); ?>" data-qualified="<?php echo $videoData['olympic_qulified']; ?>" data-title="<?php echo $videoData['name']; ?>" data-desc="<?php echo $fbDesc; ?>"></div>
                           </a>   
                         <?php }else if($videoData['type'] == 'video') { ?>
                             <a href="#">
-                              <img src="<?php echo base_url(); ?>uploads/<?php echo $videoData['video_thumbnail']; ?>" class="full-width-img">
-                              <div class="light-box-overlay video-overlay" data-id="<?php echo $videoData['id']; ?>" data-image="<?php echo base_url(); ?>uploads/<?php echo $videoData['video_thumbnail'];?>" data-title="<?php echo $videoData['name']; ?>" data-desc="Proud to support <?php echo $videoData['name']; ?> in the Rio Olympics 2016. #GarvHai"></div>
+                              <img src="<?php echo base_url(); ?>uploads/<?php echo $videoData['video_thumbnail'].'?'.strtotime($videoData['timestamp']); ?>" class="full-width-img">
+                              <div class="light-box-overlay video-overlay" data-id="<?php echo $videoData['id']; ?>" data-href="<?php echo $videoData['media_value']; ?>" data-image="<?php echo base_url(); ?>uploads/<?php echo $videoData['video_thumbnail'].'?'.strtotime($videoData['timestamp']);?>" data-qualified="<?php echo $videoData['olympic_qulified']; ?>" data-title="<?php echo $videoData['name']; ?>" data-desc="<?php echo $fbDesc; ?>"></div>
                             </a>
                         <?php } ?>               
                       </div>                
@@ -328,13 +433,62 @@
       </div>      
     </section>
     <section id="about" class="about-wrpr">
+      <div class="container fill">
+        <div id="about-carousel">
+          <div class="custom-carousel">
+            <div class="item">
+              <div class="fill" style="background-image:url('<?php echo base_url();?>assets/img/bg1.jpg');">
+                <div class="container">
+                  <img src="<?php echo base_url();?>assets/img/bg1.jpg" class="visible-xs full-width">
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="fill" style="background-image:url('<?php echo base_url();?>assets/img/bg2.jpg');">
+                <div class="container">
+                  <img src="<?php echo base_url();?>assets/img/bg2.jpg" class="visible-xs full-width">
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="fill" style="background-image:url('<?php echo base_url();?>assets/img/bg3.jpg');">
+                <div class="container">
+                  <img src="<?php echo base_url();?>assets/img/bg3.jpg" class="visible-xs full-width">
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="fill" style="background-image:url('<?php echo base_url();?>assets/img/bg4.jpg');">
+                <div class="container">
+                  <img src="<?php echo base_url();?>assets/img/bg4.jpg" class="visible-xs full-width">
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="fill" style="background-image:url('<?php echo base_url();?>assets/img/bg5.jpg');">
+                <div class="container">
+                  <img src="<?php echo base_url();?>assets/img/bg5.jpg" class="visible-xs full-width">
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="fill" style="background-image:url('<?php echo base_url();?>assets/img/bg6.jpg');">
+                <div class="container">
+                  <img src="<?php echo base_url();?>assets/img/bg6.jpg" class="visible-xs full-width">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="about-inner">
-        <h2 class="about-title text-uppercase text-center">About Garv Hai</h2>
-        <p class="about-discrb text-center">"Sport has the power to build a better and stronger nation. Which is why we have started the <span>#GarvHai</span> initiative - a humble effort by us to support budding Olympians and bring glory to the nation. We chose athletes from all parts of India to assist them to qualify for the Games much before the Olympics begin. These men and women have fought the odds and made great sacrifices, all for one vision - to bring glory to India. We need you to stand up and say 'Garv Hai'!<br/> Join us, and together, let's make history."</p>
+        <h2 class="about-title text-uppercase wow fadeInDown  text-center">#GarvHai: The Adani Initiative</h2>
+        <p class="about-discrb text-center wow fadeInUp">"Sport has the power to build a better and a stronger nation. Through our humble initiative <span>#GarvHai</span> , we're privileged to support some of the best sporting talent in the country. Talented athletes were chosen from all parts of India and assisted to qualify for the Games much before the Olympics qualifiers began. These men and women have fought the odds and made great sacrifices, all for one vision - to bring glory to India. We need you to stand up and say 'Garv Hai'!<br/> Join us, and together, let's make history."</p>
       </div>
     </section>
     <section id="contact" class="contact-wrpr">
       <h2 class="contact-title text-uppercase text-center">Share your experience</h2>
+      <div class="subhead-title">We at Adani are eager to know your #GarvHai moments. Do share it with us.</div>
       <form class="contact-form clearfix">
         <div class="col-xs-12">
           <div class="row">
@@ -372,7 +526,7 @@
                 </div>
               </div>
               <div class="form-group terms-check-wrpr text-center">
-                <h3 class="text-uppercase"><a href="<?php echo base_url(); ?>index.php/home/terms_condition">Terms & Conditions</a></h3>
+                <h3 class="text-uppercase"><a target="_blank" href="/index.php/pages/terms_of_use">Terms & Conditions</a></h3>
                 <div class="custom-check-wrpr">
                   <input id="tnc-inp" type="checkbox">
                   <label for="tnc-inp" class="text-uppercase">I hereby confirm that the details furnished above are mine and are true and correct to the best of my knowledge and belief. I have read the Privacy Policy & I authorize Garv Hai Website and its partners to call / email / SMS me for any further communication.</label>                  
@@ -383,7 +537,7 @@
                 <span style="width:80px;" id="share-exp" class="btn btn-submit center-block text-uppercase">submit</span>
               </div>
               <p class="email-txt text-center">
-                write us at <a href="mailto:adani@adani.com">adani@adani.com</a>
+                write us at <a href="mailto:communication@adani.com">communication@adani.com</a>
               </p>  
               <p class="abt-social-txt text-uppercase text-center">follow us on</p>
                <div class="heros-social-links text-center">
@@ -400,11 +554,16 @@
     <section id="media" class="players-schedule-wrpr">
       <div class="ply-schd-inner clearfix">
         <div class="row">
+          <h2 class="media-title text-uppercase text-center">Media</h2>
+          <div class="subhead-title">
+            Our Olympic warriors are making the right waves.<br/>
+            Catch up with all the latest news about our players.
+          </div>
           <div class="col-sm-5 col-xs-12">
             <h2 class="athletes-act">Catch the athletes in action</h2>
             <ul class="cust-inp-wrpr">
             <li>
-            <input type="radio" id="schedule_all" name="adaniplayers" value="all"  checked="checked">
+            <input type="radio" id="schedule_all" name="adaniplayers" value="all" checked="checked">
             <label class="custom-radio text-uppercase" for="schedule_all" >all</label></li>
             <?php
               if(isset($records)){
@@ -456,7 +615,7 @@
                   </div>
                   <div class="media-social-icon">
                     <ul class="list-inline">
-                      <li><a href="<?php echo $media['link'];?>" data-image="<?php echo base_url(); ?>uploads/<?php echo $playerData['profile_photo']; ?>" data-title="<?php echo $media['name'];?>" data-desc="Proud to support <?php echo $media['name'];?> in the Rio Olympics 2016. #GarvHai" class="social-icon-top btnShare"><img src="<?php echo base_url(); ?>assets/img/fb-w.png"></a></li>
+                      <li><a href="<?php echo $media['link'];?>" data-image="<?php echo base_url(); ?>uploads/<?php echo $media['profile_photo']; ?>" data-title="<?php echo $media['name'];?>" data-desc="<?php echo $media['media_value'];?>" class="social-icon-top btnShare"><img src="<?php echo base_url(); ?>assets/img/fb-w.png"></a></li>
                       <li><a data-title="<?php echo $media['name'];?>"  data-href="<?php echo $media['link'];?>" data-desc="<?php echo $media['media_value'];?>" href="javascript: void(0)" class="social-icon-top tw-user-media"><img src="<?php echo base_url(); ?>assets/img/tw-w.png"></a></li>
                     </ul>
                   </div>
@@ -485,12 +644,12 @@
                           $imgnm = explode('.', $videoData['media_value']);
                         ?>
                         <div class="item" id="modalImg_<?php echo $videoData['id']; ?>">
-                          <img src="<?php echo base_url(); ?>uploads/<?php echo $imgnm[0].'-l.jpg'; ?>" class="full-width-img">
+                          <img src="<?php echo base_url(); ?>uploads/<?php echo $imgnm[0].'-l.jpg?'.strtotime($videoData['timestamp']); ?>" class="full-width-img">
                         </div>
                        <?php }else if($videoData['type'] == 'video') { ?>
-                          <div class="item" id="modalImg_<?php echo $videoData['id']; ?>" >
+                          <div class="item video-media" id="modalImg_<?php echo $videoData['id']; ?>" >
                             <div class="embed-responsive embed-responsive-16by9">
-                               <iframe class="embed-responsive-item" src="<?php echo $videoData['media_value']; ?>" frameborder="0" allowfullscreen></iframe>
+                               <iframe class="embed-responsive-item" src="<?php echo $videoData['media_value']; ?>" thumbimg="<?php echo base_url(); ?>uploads/<?php echo $videoData['video_thumbnail'].'?'.strtotime($videoData['timestamp']);?>" frameborder="0" allowfullscreen></iframe>
                             </div>
                           </div>
                        <?php } 
@@ -511,8 +670,8 @@
       <div class="modal-footer">
         <div class="heros-social-links">
         <ul class="list-inline">
-          <li><a id="largeShare" href="<?php echo base_url(); ?>" data-media="yes" data-image="" data-title="" data-desc="" class="social-icon-top btnShare"><img src="<?php echo base_url(); ?>assets/img/fb-w.png"></a></li>
-          <li><a id="largeTWShare" href="" class="social-icon-top tw-user-profile" data-username=""><img src="<?php echo base_url(); ?>assets/img/tw-w.png"></a></li>
+          <li id="fbShareData" data-name="" data-description=""><a id="largeShare" data-href="" data-image="" data-title="" data-desc="" class="social-icon-top btnShare"><img src="<?php echo base_url(); ?>assets/img/fb-w.png"></a></li>
+          <li><a id="largeTWShare" href="" class="social-icon-top tw-user-profile" data-qualified="" data-username=""><img src="<?php echo base_url(); ?>assets/img/tw-w.png"></a></li>
         </ul>
       </div>
       </div>

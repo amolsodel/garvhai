@@ -10,9 +10,9 @@
       <div class="col-sm-6 col-xs-12">
         <nav class="footer-nav clearfix">
           <ul class="nav navbar-nav navbar-right">           
-            <li><a href="<?php echo base_url(); ?>index.php/pages/privacy_policy" target="_blank">Privacy policy</a></li>
-            <li><a href="<?php echo base_url(); ?>index.php/pages/legal_disclaimer" target="_blank">Legal disclaimer</a></li>                       
-            <li><a href="<?php echo base_url(); ?>index.php/pages/terms_of_use" target="_blank">Terms of use</a></li>
+            <li><a href="/index.php/pages/privacy_policy" target="_blank">Privacy policy</a></li>
+            <li><a href="/index.php/pages/legal_disclaimer" target="_blank">Legal disclaimer</a></li>                       
+            <li><a href="/index.php/pages/terms_of_use" target="_blank">Terms of use</a></li>
           </ul>
         </nav>
       </div>        
@@ -26,13 +26,29 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="<?php echo base_url(); ?>assets/js/bootstrap.min.js"></script>
     <script src="<?php echo base_url(); ?>assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/js/custom.js" type="text/javascript" charset="utf-8"></script>
+    <script src="<?php echo base_url(); ?>assets/js/jquery.scrollme.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/js/wow.js"></script>
+    <script src="<?php echo base_url(); ?>assets/js/custom.js?ver=0.10" type="text/javascript" charset="utf-8"></script>
 
     <script type="text/javascript">
      
       var baseUrl = '<?php echo base_url() ?>';
 
       $(document).ready(function(){
+        $(".custom-carousel > div:gt(0)").hide();
+
+        setInterval(function() { 
+          $('.custom-carousel > div:first')
+            .fadeOut(1000)
+            .next()
+            .fadeIn(1000)
+            .end()
+            .appendTo('.custom-carousel');
+        },  4000);
+
+        //$('.owl-carousel').trigger('autoplay.play.owl',[1000])
+
+//setInterval(function(){ $('.owl-carousel').trigger('autoplay.play.owl',[1000]); }, 3000);
         $('.close-overlay').click(function(){
           $(this).parents('.overlay-wrpr').removeClass('active-mob-overlay');
           
@@ -94,22 +110,24 @@
     				      reomoveItem();
     				      $('.hero-detail-info').addClass('left').addClass('bottom');
     				    }  
-            }else{
-		          $("body, html").animate({
-		                scrollTop: $("#hero-wrpr").offset().top
-		            }, 600);
-		        }
-
+               
+            }
+            
             if(playerMode != 'videos'){
               $(this).parents('.overlay-wrpr').removeClass('active-mob-overlay');
               $(this).parents('.heros-list').find('.hover-overlays').show();
               $(this).parents('.overlay-wrpr').addClass('active-img').find('.hover-overlays').hide();
+              $("body, html").animate({
+                    scrollTop: $("#hero-wrpr").offset().top
+                }, 600);
               showModalContent(playerId,playerMode,'mediaListWrpr');
             }else{
               $('.hero-detail-info').addClass('hidden');
+              $(this).parents('.overlay-wrpr').removeClass('active-mob-overlay');
               $(this).parents('.heros-list').find('.hover-overlays').hide();
               $('.col-sm-6 .cust-inp-wrpr').find('input').prop('checked',false);
               $('.cust-inp-wrpr').find('input[id="players_'+playerId+'"]').prop('checked',true);
+              $("#mobileFilter option[value=" + playerId +"]").prop("selected", true);
               $('body').addClass('loading');
               playerFilterData(playerId);
               $("body, html").animate({
@@ -120,8 +138,7 @@
           }
           function reomoveItem(){
             return $('.hero-detail-info').removeClass('right').removeClass('top').removeClass('bottom').removeClass('left');
-          }     
-          $('body').removeClass('loading');      
+          }
         });
 
         $('.hover-overlays').hover(function(e){
@@ -130,7 +147,7 @@
           $('.user-prof-wrpr').addClass('hidden');          
         });
 
-        $('.back-btn').click(function(){
+        $('.back-btn,.close-prof').click(function(){
           $(this).parents('.hero-detail-info').addClass('hidden');
           $('.user-prof-wrpr').removeClass('hidden');  
           $('.hover-overlays').hide();
@@ -138,7 +155,7 @@
         });
 
         $('.media-show').click(function(){
-          showModalContent($(this).data('profileid'),$(this).data('mode'));
+          showModalContent($(this).data('profileid'),$(this).data('mode'), 'mediaListWrpr');
         });
 
         $('.profile-show').click(function(){
@@ -153,19 +170,55 @@
         $('#share-exp').click(function(e){
           /*e.stopPropagation();*/
           e.preventDefault();
+          var size = 10;
           var alertModal = $('#alertModal');
           if($('input[id="tnc-inp"]').is(':checked')){
             var name = $('#name-inp').val();
             var email = validateEmail($('#email-inp').val());
             var mobile = $('#tel-inp').val();
             var cmnt = $('#comment-inp').val();
+            var letters = /^[a-zA-Z ]*$/; 
             if(name == "" && $('#email-inp').val() == "" && mobile == "" && cmnt == ""){
               alertModal.find('.replace-content').text('All fields are required.');
               alertModal.modal('show');
             }else if(name != "" && email != "" && mobile != "" && cmnt != ""){
-              addShareExperience(name, email, mobile, cmnt);
-            }else if(name == "" && email == false && mobile == "" && cmnt == ""){
+              if(isNaN(mobile)){
+              alertModal.find('.replace-content').text('Please enter Number only.');
+              alertModal.modal('show');
+              }
+              else if($('#tel-inp').val().length != size){
+              alertModal.find('.replace-content').text('Please enter Number exactly 10 digits.');
+              alertModal.modal('show');
+              }
+              else if (/^[a-zA-Z0-9- ]*$/.test(name) == false) {
+              alertModal.find('.replace-content').text('Please enter name  without special characters.');
+              alertModal.modal('show');
+              }
+              else if((!name.match(letters))){
+              alertModal.find('.replace-content').text('Please enter a valid name.');
+              alertModal.modal('show');
+              }
+              else if(cmnt.length <= 10){
+              alertModal.find('.replace-content').text('Please enter comment with atleast 10 characters.');
+              alertModal.modal('show');
+              }
+              else{
+              $('#share-exp').attr('disabled','disabled');
+              addShareExperience(name, $('#email-inp').val(), mobile, cmnt);}
+            }else if(name != "" && $('#email-inp').val() == '' && mobile != "" && cmnt != ""){
+              alertModal.find('.replace-content').text('Please enter email-id.');
+              alertModal.modal('show');
+            }else if(name != "" && email == false && mobile != "" && cmnt != ""){
               alertModal.find('.replace-content').text('Please enter valid email-id.');
+              alertModal.modal('show');
+            }else if(name != "" && email == true && mobile == "" && cmnt != ""){
+              alertModal.find('.replace-content').text('Please enter mobile-no.');
+              alertModal.modal('show');
+            }else if(name != "" && email == true && mobile != "" && cmnt == ""){
+              alertModal.find('.replace-content').text('Please enter comment.');
+              alertModal.modal('show');
+            }else if(name == "" && email == true && mobile != "" && cmnt != ""){
+              alertModal.find('.replace-content').text('Please enter name.');
               alertModal.modal('show');
             }else{
               alertModal.find('.replace-content').text('Please fill other fields also.');
@@ -181,6 +234,7 @@
           $('body').addClass('loading');
           var playerId = $(this).val();
           showModalContent(playerId,'media', 'dynamicMediaContent');
+          
         });
 
         $('body').on('click','.fb-user-profile', function(e){
@@ -192,8 +246,15 @@
 
         $('body').on('click','.tw-user-profile', function(e){
           e.preventDefault();
+          var twDesc ='';
           var username = $(this).data('username');
-          window.open('https://twitter.com/share?url='+escape(window.location.href)+'&text=Proud to support '+username+' in the Rio Olympics 2016. via @GarvHai', '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');          
+          var olp_quilified = $(this).data('qualified');
+          if(olp_quilified == 1){
+            twDesc = 'Proud to support '+username+' in the Rio Olympics 2016.';
+          }else{
+            twDesc = 'Proud to support '+username+'.'
+          }
+          window.open('https://twitter.com/share?url='+escape(window.location.href)+'&text='+twDesc+'via @AdaniOnline&hashtags=GarvHai', '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');          
         });
 
         $('body').on('click','.tw-user-media', function(e){
@@ -201,7 +262,7 @@
           var link = $(this).data('href');
           var description = $(this).data('desc');
           var username = $(this).data('title');
-          window.open('https://twitter.com/share?url='+escape(link)+'&text='+username+': '+description+'via @GarvHai', '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');          
+          window.open('https://twitter.com/share?url='+escape(link)+'&text='+username+': '+description+'via @AdaniOnline&hashtags=GarvHai', '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');          
         });
 
         $('#mobileMediaFilter').change(function(e){
@@ -228,13 +289,15 @@
 
       function addShareExperience(name, email, mobile, cmnt){
         $.ajax({
-            url: baseUrl+"index.php/home/share_experience_data",
+            url: "/index.php/home/share_experience_data",
             type: 'POST',            
             data: { 'name': name, 'email': email, 'mobile': mobile, 'cmnt': cmnt },
             dataType: "json",
             success: function(data){
               $('#alertModal').find('.replace-content').text(JSON.stringify(data));
               $('#alertModal').modal('show');
+              $('.contact-form')[0].reset();
+              $('#share-exp').removeAttr('disabled');
             }
         });
       }
@@ -243,19 +306,25 @@
         if(playerId && playerMode){
 
           $.ajax({
-            url: baseUrl+"index.php/home/player_model_data",
+            url: "/index.php/home/player_model_data",
             type: 'POST',            
             data: { 'mode': playerMode, 'playerId': playerId },
             dataType: "json",
             success: function(data) {
               if($.trim(data) != "") {
                 var mediaHtml = '';
+                var fbDesc = '';
                 var socialHtml = '';
                 var mobileFBSocialHtml = mobileTWSocialHtml = '';
                 if(playerMode == 'profile'){
-                  socialHtml += '<li><a href="'+baseUrl+'" class="social-icon-top fb-user-profile" data-desc="Proud to support '+data.modal_data[0].name+' in the Rio Olympics 2016. #GarvHai" data-title="'+data.modal_data[0].name+'" data-image="'+baseUrl+'uploads/'+data.modal_data[0].profile_photo+'"><img src="'+baseUrl+'assets/img/fb-w.png"></a></li><li><a href="javascript:void(0)" class="social-icon-top tw-user-profile" data-username="'+data.modal_data[0].name+'"><img src="'+baseUrl+'assets/img/tw-w.png"></a></li>';
-                  mobileFBSocialHtml += '<a href="'+baseUrl+'" class="social-icon-top fb-user-profile" data-desc="Proud to support '+data.modal_data[0].name+' in the Rio Olympics 2016. #GarvHai" data-title="'+data.modal_data[0].name+'" data-image="'+baseUrl+'uploads/'+data.modal_data[0].profile_photo+'"><img src="'+baseUrl+'assets/img/fb-w.png"></a>';
-                  mobileTWSocialHtml += '<a href="javascript:void(0)" class="social-icon-top tw-user-profile" data-username="'+data.modal_data[0].name+'"><img src="'+baseUrl+'assets/img/tw-w.png"></a>';
+                  if(data.modal_data[0].olympic_qulified == 1){
+                    fbDesc += 'Proud to support '+data.modal_data[0].name+' in the Rio Olympics 2016. #GarvHai by #Adani';
+                  }else{
+                    fbDesc += 'Proud to support '+data.modal_data[0].name+'. #GarvHai by #Adani';
+                  }
+                  socialHtml += '<li><a href="http://garvhai.in" class="social-icon-top fb-user-profile" data-desc="'+fbDesc+'" data-title="'+data.modal_data[0].name+'" data-image="'+baseUrl+'uploads/'+data.modal_data[0].profile_photo+'"><img src="'+baseUrl+'assets/img/fb-w.png"></a></li><li><a href="javascript:void(0)" class="social-icon-top tw-user-profile" data-qualified="'+data.modal_data[0].olympic_qulified+'" data-username="'+data.modal_data[0].name+'"><img src="'+baseUrl+'assets/img/tw-w.png"></a></li>';
+                  mobileFBSocialHtml += '<a href="http://garvhai.in" class="social-icon-top fb-user-profile" data-desc="'+fbDesc+'" data-title="'+data.modal_data[0].name+'" data-image="'+baseUrl+'uploads/'+data.modal_data[0].profile_photo+'"><img src="'+baseUrl+'assets/img/fb-w.png"></a>';
+                  mobileTWSocialHtml += '<a href="javascript:void(0)" class="social-icon-top tw-user-profile" data-qualified="'+data.modal_data[0].olympic_qulified+'" data-username="'+data.modal_data[0].name+'"><img src="'+baseUrl+'assets/img/tw-w.png"></a>';
                     $('.hero-detail-inner-media').addClass('hidden');
                     $('.hero-detail-inner-profile').removeClass('hidden');
                     $('.hero-achive-name').text(data.modal_data[0].name);
@@ -275,7 +344,7 @@
                     $.each( data, function( index, mediaValue ) { 
                       for(var i=0; i<mediaValue.length; i++){
                         var published_date = converter(mediaValue[i].published_date);
-                        mediaHtml += '<div class="media-item"><div class="media-discrp"><div class="media-discrp-txt"><a href="'+mediaValue[i].link+'" target="blank">'+mediaValue[i].description+'</a></div><div class="media-discrp-date">'+published_date+'</div></div><div class="media-social-icon"><ul class="list-inline"><li><a href="'+mediaValue[i].link+'" data-desc="'+mediaValue[i].media_value+'" data-title="'+mediaValue[i].name+'" data-image="'+baseUrl+'uploads/'+mediaValue[i].profile_photo+'" class="social-icon-top fb-user-profile"><img src="'+baseUrl+'assets/img/fb-w.png"></a></li><li><a href="#" data-title="'+mediaValue[i].name+'"  data-href="'+mediaValue[i].link+'" data-desc="'+mediaValue[i].media_value+'"  class="social-icon-top tw-user-media"><img src="'+baseUrl+'assets/img/tw-w.png"></a></li></ul></div></div>';
+                        mediaHtml += '<div class="media-item"><div class="media-discrp"><div class="media-discrp-txt"><a href="'+mediaValue[i].link+'" target="blank">'+mediaValue[i].description+'</a></div><div class="media-discrp-date">'+published_date+'</div></div><div class="media-social-icon"><ul class="list-inline"><li><a href="'+mediaValue[i].link+'" data-desc="'+mediaValue[i].media_value+'" data-title="'+mediaValue[i].name+'" data-image="'+baseUrl+'uploads/'+mediaValue[i].profile_photo+'" class="social-icon-top fb-user-profile"><img src="'+baseUrl+'assets/img/fb-w.png"></a></li><li><a href="#" data-title="'+mediaValue[i].name+'"  data-href="'+mediaValue[i].link+'" data-desc="'+mediaValue[i].media_value+'" data-qualified="'+mediaValue[i].olympic_qulified+'" class="social-icon-top tw-user-media"><img src="'+baseUrl+'assets/img/tw-w.png"></a></li></ul></div></div>';
                       }
                     }); 
                     $('#'+divToReplace).html(mediaHtml);
@@ -297,9 +366,9 @@
 
     <div id="fb-root"></div>
     <script>
-    window.fbAsyncInit = function(){
+    window.fbAsyncInit = function(){ //1438336106420660
       FB.init({
-          appId: '1743283562560962', status: true, cookie: true, xfbml: true }); 
+          appId: '197178750676127', status: true, cookie: true, xfbml: true }); 
       };
       (function(d, debug){var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
           if(d.getElementById(id)) {return;}

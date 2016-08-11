@@ -14,9 +14,8 @@
             <h3 class="panel-title"><?php echo $panel_title; ?></h3>
         </div>
         <div class="panel-body">
-            <?php $action_url = isset($player) ? 'admin/update_player/'.$player['id'] : 'admin/add_player';?>
-            <?php echo form_open_multipart($action_url); ?>
-
+            <?php $action_url = isset($player) ? 'http://www.garvhai.in/index.php/admin/update_player/'.$player['id'] : 'http://www.garvhai.in/index.php/admin/add_player';?>
+             <form action="<?php echo $action_url; ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8">
                 <label for="playername">Name</label>
                 <input type="input" name="playername" value="<?php if(isset($player)) echo $player['name'];?>" />
                 <hr />
@@ -32,6 +31,11 @@
 
                 <label for="championship">Upcoming Championship</label>
                 <textarea name="championship" rows="10" cols="80"><?php if(isset($player)) echo $player['championship'];?></textarea>
+                <hr />
+
+                <?php $checkedOpt = isset($player['olympic_qulified']) ? 1 : 0;?>
+                <input type="checkbox" name="olympic_qulified" value="<?php echo $checkedOpt; ?>" <?php if($player['olympic_qulified'] == 1) { echo "checked='checked'"; } ?> />
+                <label for="olympic_qulified">is_Olympic_Quilified</label>
                 <hr />
 
                 <?php $buttom_txt = isset($player) ? 'Update Player' : 'Create New Player';?>

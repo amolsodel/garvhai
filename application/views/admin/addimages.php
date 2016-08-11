@@ -11,18 +11,21 @@
             <h3 class="panel-title">Add Images</h3>
         </div>
         <div class="panel-body">
-			<?php echo form_open_multipart();?>
-			  <p>Upload file(s):</p>
-			  <?php echo form_upload('uploadedimages[]','','multiple'); ?>
+			<form enctype="multipart/form-data" method="post" accept-charset="utf-8">
+			  <p>Upload thumbnail:</p>
+			  <?php echo form_upload('uploadedimages[]',''); ?>
+			  <hr>
+			  <p>Upload Image:</p>
+			  <?php echo form_upload('uploadedimages[]',''); ?>
 			  <br />
 			  <br />
 			  <?php echo form_submit('submit','Upload');?>
-			<?php echo form_close();?>
+			</form>
 		</div>
 	</div>
 	<?php
 		if(isset($player_id)){
 	?>
-			<a class="btn btn-sm btn-primary center-block" style="width:25%;" href="<?php echo site_url('admin/view_images/'.$player_id);?>">View Images</a>
+			<a class="btn btn-sm btn-primary center-block" style="width:25%;" href="http://www.garvhai.in/index.php/admin/view_images/<?php echo $player_id;?>">View Images</a>
 	<?php } ?>
 </div>

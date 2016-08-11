@@ -42,11 +42,17 @@ class Admin_model extends CI_Model {
     public function addplayer($upload_data)
     {
         $this->load->helper('url');
+        if($this->input->post('olympic_qulified') != '')
+            $olympic_qulified = 1;
+        else
+            $olympic_qulified = 0;
+
         $data = array(
             'name' => $this->input->post('playername'),
             'profile_photo' => $upload_data['upload_data']['file_name'],
             'contest' => $this->input->post('contest'),
-            'championship' => $this->input->post('championship')
+            'championship' => $this->input->post('championship'),
+            'olympic_qulified' => $olympic_qulified
             //'slug' => $slug,
             //'text' => $this->input->post('text')
         );
@@ -66,11 +72,16 @@ class Admin_model extends CI_Model {
 
     public function updateplayer($update_data){
         $this->load->helper('url');
+        if($this->input->post('olympic_qulified') != '')
+            $olympic_qulified = 1;
+        else
+            $olympic_qulified = 0;
 
         $data = array(
             'name' => $this->input->post('playername'),
             'contest' => $this->input->post('contest'),
-            'championship' => $this->input->post('championship')
+            'championship' => $this->input->post('championship'),
+            'olympic_qulified' => $olympic_qulified
         );
         if(isset($update_data['upload_data']['file_name']) && $update_data['upload_data']['file_name'] != ''){
             $data['profile_photo'] = $update_data['upload_data']['file_name'];
@@ -200,6 +211,17 @@ class Admin_model extends CI_Model {
         $data['social'] = $query->result_array();
 
         return $data;
+    }
+
+    public function get_contact_us_user_data() {
+        
+        $query = $this->db->query('SELECT * FROM garvhai_users ORDER BY id DESC');
+        return $query->result_array();
+    }
+
+    public function deleteuser($user_id)
+    {
+        return $this->db->delete('garvhai_users', array('id' => $user_id)); 
     }
 
 }

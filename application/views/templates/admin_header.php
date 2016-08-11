@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Bootstrap 101 Template</title>
+    <title>Garvhai</title>
 
     <!-- Bootstrap -->
     <link href="<?php echo base_url(); ?>assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -18,6 +18,6 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     <script src="<?php echo base_url(); ?>assets/js/jquery-1.9.1.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/ckeditor/ckeditor.js"></script>
+    <script src="<?php echo base_url(); ?>assets/ckeditor/ckeditor.js?ver=0.1"></script>
   </head>
   <body>

@@ -13,11 +13,14 @@
 
         public function index()
         {
-            $data['title'] = 'Admin Login';
-
-            $this->load->view('templates/admin_header', $data);
-            $this->load->view('admin/index', $data);
-            $this->load->view('templates/admin_footer');
+        	if(isset($this->session->username)){
+        		header('Location:http://www.garvhai.in/index.php/admin/dashbord');
+	        }else{
+	        	$data['title'] = 'Admin Login';
+	            $this->load->view('templates/admin_header', $data);
+	            $this->load->view('admin/index', $data);
+	            $this->load->view('templates/admin_footer');
+	        }
         }
 
         public function login(){
@@ -34,8 +37,8 @@
         		/*$this->load->view('templates/admin_header', $data);
         		$this->load->view('admin/dashbord', $data);
             	$this->load->view('templates/admin_footer');*/
-            	$this->dashbord();
-        	}else{
+        		header('Location:http://www.garvhai.in/index.php/admin/dashbord');
+            }else{
         		$data['error'] = 'UserId password didn\'t match' ;
 
         		$this->load->view('templates/admin_header', $data);
@@ -78,7 +81,7 @@
 
 	            $config['upload_path'] = './uploads/';
 		        $config['allowed_types'] = 'gif|jpg|png';
-		        $config['max_size'] = '100';
+		        $config['max_size'] = '10000';
 		        $config['max_width']  = '1024';
 		        $config['max_height']  = '768';
 
@@ -121,7 +124,7 @@
 					}
 	            }
 	        }else{
-	        	redirect('/admin');
+	        	header('Location:http://www.garvhai.in/index.php/admin/');
 	        }
         }
 
@@ -129,9 +132,9 @@
         {
         	if(isset($this->session->username)){
 	        	$delete_response = $this->admin_model->deleteplayer($slug);
-	        	redirect('/admin/dashbord');
+	        	header('Location:http://www.garvhai.in/index.php/admin/dashbord');
         	}else{
-	        	redirect('/admin');
+	        	header('Location:http://www.garvhai.in/index.php/admin/');
 	        }
         }
 
@@ -149,7 +152,7 @@
 	        	$data['upload_error'] = urldecode($upload_error);
 	        	$config['upload_path'] = './uploads/';
 		        $config['allowed_types'] = 'gif|jpg|png';
-		        $config['max_size'] = '100';
+		        $config['max_size'] = '10000';
 		        $config['max_width']  = '1024';
 		        $config['max_height']  = '768';
 
@@ -165,7 +168,7 @@
 	    		$this->load->view('templates/nav_close');
 	        	$this->load->view('templates/admin_footer');
 	        }else{
-	        	redirect('/admin');
+	        	header('Location:http://www.garvhai.in/index.php/admin/');
 	        }
         }
 
@@ -174,7 +177,7 @@
 	        	$data['title'] = 'Edit Player';
 	        	$config['upload_path'] = './uploads/';
 		        $config['allowed_types'] = 'gif|jpg|png';
-		        $config['max_size'] = '100';
+		        $config['max_size'] = '10000';
 		        $config['max_width']  = '1024';
 		        $config['max_height']  = '768';
 
@@ -186,18 +189,20 @@
 
 		        if ($this->form_validation->run() === FALSE)
 	            {
-	            	redirect('admin/edit_player/'.$player_id);
+	            	header('Location:http://www.garvhai.in/index.php/admin/edit_player/'.$player_id);
 	            }
 	            else if( ! $this->upload->do_upload('userpic')){
 	            	$uploadError = $this->upload->display_errors();
 	            	if (strip_tags($uploadError) != 'You did not select a file to upload.'){
-	            		redirect('admin/edit_player/'.$player_id.'/'.strip_tags($uploadError));
+	            		header('Location:http://www.garvhai.in/index.php/admin/edit_player/'.$player_id.'/'.strip_tags($uploadError));
+	            		//redirect('admin/edit_player/'.$player_id.'/'.strip_tags($uploadError));
 	            	}else{
 		            	$data['upload_data'] = $this->upload->data();
 		            	$data['player_id'] = $player_id;
 						$update_response = $this->admin_model->updateplayer($data);
 						if($update_response){
-							redirect('admin/edit_player/'.$player_id.'/'.strip_tags("User profile updated successfully"));
+							header('Location:http://www.garvhai.in/index.php/admin/edit_player/'.$player_id.'/'.strip_tags("User profile updated successfully"));
+							//redirect('admin/edit_player/'.$player_id.'/'.strip_tags("User profile updated successfully"));
 						}
 		            }
 	            }else{
@@ -206,11 +211,12 @@
 					$update_response = $this->admin_model->updateplayer($data);
 					//var_dump($update_response);
 					if($update_response){
-						redirect('admin/edit_player/'.$player_id.'/'.strip_tags("User profile updated successfully"));
+						header('Location:http://www.garvhai.in/index.php/admin/edit_player/'.$player_id.'/'.strip_tags("User profile updated successfully"));
+						//redirect('admin/edit_player/'.$player_id.'/'.strip_tags("User profile updated successfully"));
 					}
 	            }
 	        }else{
-	        	redirect('/admin');
+	        	header('Location:http://www.garvhai.in/index.php/admin/');
 	        }
         }
 
@@ -220,7 +226,7 @@
 	        	$data['title'] = 'Add media for player';
 	        	$config['upload_path'] = './uploads/';
 		        $config['allowed_types'] = 'gif|jpg|png';
-		        $config['max_size'] = '100';
+		        $config['max_size'] = '10000';
 		        $config['max_width']  = '1024';
 		        $config['max_height']  = '768';
 
@@ -266,7 +272,7 @@
 		        	$this->load->view('templates/admin_footer');
 				}
 			}else{
-	        	redirect('/admin');
+	        	header('Location:http://www.garvhai.in/index.php/admin/');
 	        }	
         }
 
@@ -298,9 +304,18 @@
 			$config['allowed_types'] = 'gif|jpg|png';*/
 
 			// now, taking into account that there can be more than one file, for each file we will have to do the upload
+			$img_nm = '';
 			for ($i = 0; $i < $number_of_files; $i++)
 			{
-				$_FILES['uploadedimage']['name'] = $files['name'][$i];
+				if($i == 0){
+					$img_nm = $files['name'][0];
+					$img_nm = explode('.', $img_nm);
+					$img_nm = $img_nm[0].time().'.'.$img_nm[1];
+				}else{
+					$img_nm = explode('.', $img_nm);
+					$img_nm = $img_nm[0].'-l.jpg';
+				}
+				$_FILES['uploadedimage']['name'] = $img_nm;
 				$_FILES['uploadedimage']['type'] = $files['type'][$i];
 				$_FILES['uploadedimage']['tmp_name'] = $files['tmp_name'][$i];
 				$_FILES['uploadedimage']['error'] = $files['error'][$i];
@@ -310,7 +325,9 @@
 				$this->upload->initialize($config);*/
 				if ($this->upload->do_upload('uploadedimage'))
 				{
-					$this->_uploaded[$i] = $this->upload->data();
+					if($i == 0){
+						$this->_uploaded[$i] = $this->upload->data();
+					}
 				}
 				else
 				{
@@ -327,7 +344,7 @@
 	        	$data['title'] = 'Add images for player';
 	        	$config['upload_path'] = './uploads/';
 		        $config['allowed_types'] = 'gif|jpg|png';
-		        $config['max_size'] = '100';
+		        $config['max_size'] = '10000';
 		        $config['max_width']  = '1024';
 		        $config['max_height']  = '768';
 
@@ -365,6 +382,14 @@
 			        	$this->load->view('admin/addimages',$data);
 			    		$this->load->view('templates/nav_close');
 			        	$this->load->view('templates/admin_footer');
+					}else
+					{
+						$this->form_validation->set_message('fileupload_check', 'Please select file to upload!');
+						$this->load->view('templates/admin_header', $data);
+			            $this->load->view('templates/admin_nav');
+			        	$this->load->view('admin/addimages',$data);
+			    		$this->load->view('templates/nav_close');
+			        	$this->load->view('templates/admin_footer');
 					}
 				}
 				else
@@ -376,7 +401,7 @@
 		        	$this->load->view('templates/admin_footer');
 				}
 			}else{
-	        	redirect('/admin');
+	        	header('Location:http://www.garvhai.in/index.php/admin/');
 	        }	
         }
 
@@ -399,7 +424,7 @@
 	    		$this->load->view('templates/nav_close');
 	        	$this->load->view('templates/admin_footer');
 	        }else{
-	        	redirect('/admin');
+	        	header('Location:http://www.garvhai.in/index.php/admin/');
 	        }
         }
 
@@ -410,7 +435,7 @@
 	        	$data['title'] = 'Add video';
 	        	$config['upload_path'] = './uploads/';
 		        $config['allowed_types'] = 'gif|jpg|png';
-		        $config['max_size'] = '100';
+		        $config['max_size'] = '10000';
 		        $config['max_width']  = '1024';
 		        $config['max_height']  = '768';
 
@@ -450,7 +475,7 @@
 		        	$this->load->view('templates/admin_footer');
 	        	}
 	        }else{
-	        	redirect('/admin');
+	        	header('Location:http://www.garvhai.in/index.php/admin/');
 	        }
         }
 
@@ -473,7 +498,7 @@
 	    		$this->load->view('templates/nav_close');
 	        	$this->load->view('templates/admin_footer');
         	}else{
-	        	redirect('/admin');
+	        	header('Location:http://www.garvhai.in/index.php/admin/');
 	        }
         }
 
@@ -509,7 +534,7 @@
 		        	$this->load->view('templates/admin_footer');
 	        	}
 	        }else{
-	        	redirect('/admin');
+	        	header('Location:http://www.garvhai.in/index.php/admin/');
 	        }
 	        	
         }
@@ -536,8 +561,40 @@
 	    		$this->load->view('templates/nav_close');
 	        	$this->load->view('templates/admin_footer');
         	}else{
-	        	redirect('/admin');
+	        	header('Location:http://www.garvhai.in/index.php/admin/');
 	        }
         }
 
-	}
+        public function contact_us_user()
+	    {
+	    	if(isset($this->session->username)){
+	        	//$data['player_id'] = $player_id;
+	        	$data['contact_us_users'] = $this->admin_model->get_contact_us_user_data();
+
+	        	if (empty($data['contact_us_users']))
+	            {
+	                show_404();
+	            }
+	            /*echo '<pre>';
+	            print_r($data['player_videos']);
+	            echo '<pre>';*/
+	            $this->load->view('templates/admin_header', $data);
+	            $this->load->view('templates/admin_nav');
+	        	$this->load->view('admin/contact_us_user',$data);
+	    		$this->load->view('templates/nav_close');
+	        	$this->load->view('templates/admin_footer');
+	    	}else{
+	        	header('Location:http://www.garvhai.in/index.php/admin/');
+	        }
+	    }
+
+	    public function delete_user($user_id)
+	    {
+	    	if(isset($this->session->username)){
+	        	$delete_response = $this->admin_model->deleteuser($user_id);
+	        	header('Location:http://www.garvhai.in/index.php/admin/contact_us_user');
+	        }else{
+	    		header('Location:http://www.garvhai.in/index.php/admin/');
+	        }
+	    }
+}
