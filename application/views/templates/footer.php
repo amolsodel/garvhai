@@ -332,6 +332,16 @@
                     
                     mediaHtml += '<div class="hero-detail-middle-name text-uppercase">'+data.modal_data[0].name+'</div>'+data.modal_data[0].contest+'<br />'+data.modal_data[0].championship;
                     $('#profileReplaceData').html(mediaHtml);
+                    if(data.modal_data[0].name== "Shiva Thapa"){
+                      $('#shiva').removeClass('hidden');
+                      $('#khushbir').addClass('hidden');
+                    }/*else if(data.modal_data[0].name== "Khushbir Kaur"){
+                      $('#khushbir').removeClass('hidden');
+                      $('#shiva').addClass('hidden');
+                    }*/else{
+                      $('#khushbir').addClass('hidden');
+                      $('#shiva').addClass('hidden');
+                    }
                 }else if(playerMode == 'videos'){
                     $('.hero-detail-inner-media').addClass('hidden');
                     $('.hero-detail-inner-profile').removeClass('hidden');

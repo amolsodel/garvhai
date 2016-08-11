@@ -204,21 +204,38 @@
                 <div class="hero-detail-inner hero-detail-inner-profile hidden">
                   <div class="hero-detail-top">
                     <div class="hero-detail-top-in">
-                      <!-- <div class="hero-achive-wrpr">
+                      
+                      <div id="shiva" class="hero-achive-wrpr hidden">
                         <div class="hero-achive-con">
-                          <div class="hero-achive-name text-uppercase">INDERJEET SINGH</div>
-                          <div class="hero-achive-event">(Shot Put)</div>
+                          <div class="hero-achive-name text-uppercase">Shiva Thapa</div>
+                          <div class="hero-achive-event">(Boxing)</div>
                         </div>
                         <div class="hero-achive-time">
-                          28.5
+                          -
                         </div>
                         <div class="hero-achive-time">
-                          22.5 
+                          - 
                         </div>
                         <div class="hero-achive-time">
-                          22.1
+                          -
                         </div>
-                      </div> -->
+                      </div>
+                      <div id="khushbir" class="hero-achive-wrpr hidden">
+                        <div class="hero-achive-con">
+                          <div class="hero-achive-name text-uppercase">Khushbir Kaur</div>
+                          <div class="hero-achive-event">(Athletics)</div>
+                        </div>
+                        <div class="hero-achive-time">
+                          -
+                        </div>
+                        <div class="hero-achive-time">
+                          - 
+                        </div>
+                        <div class="hero-achive-time">
+                          -
+                        </div>
+                      </div>
+
                       <div class="hero-detail-social-icon text-center">
                         <div id="hero-support-name">Support Inderjeet</div>
                         <ul class="list-inline">

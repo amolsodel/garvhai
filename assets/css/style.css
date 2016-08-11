@@ -167,7 +167,7 @@ html,body{height: 100%;font-family: 'rubrikregular';color: #000;font-size: 12px;
 #hero-wrpr .col-xs-40{width: 50%;}
 .hero-achive-wrpr {display: table;width: 100%;}
 .hero-achive-wrpr>div{display: table-cell;vertical-align: middle;}
-.hero-detail-top-in {position: relative;padding-right: 115px;}
+.hero-detail-top-in {position: relative;padding-right: 160px;}
 .hero-detail-social-icon {position: absolute;right: 45px;top: 0;}
 .close-prof{text-align:right;float: right; position: absolute; right:5px; top:5px; z-index:10; cursor:pointer;}
 .hero-achive-con,.hero-achive-time {background-color: #c47600;padding: 5px 10px;}
